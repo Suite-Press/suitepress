@@ -1,0 +1,119 @@
+.comments-area-suitepress {
+
+
+  h3.comments-title-suitepress {
+    border-bottom: 2px solid rgba(100, 100, 111, 0.2);
+    margin-bottom: 2rem;
+  }
+  form#commentform {
+
+    textarea{
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #d5e6f3;
+      height: 100px;
+    }
+
+    input[type=text], input[type=password], input[type=email], input[type=url]{
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #d5e6f3;
+      height: 40px;
+    }
+
+    input[type=submit]{
+      background: #ffffff;
+      border: 2px solid #0000002e;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    p.comment-form-cookies-consent {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: .5rem;
+
+      label{
+        margin-top: .2rem;
+      }
+    }
+
+  }//form
+
+  ul.comment-list-suitepress {
+    list-style: none;
+
+    li{
+      background: #ffffff;
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: rgba(100, 100, 111, 0.09) 0px 7px 29px 0px;
+
+      article {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+        position: relative;
+
+        .comment-content {
+          border: 1px solid #ff000012;
+          padding: .5rem;
+        }
+
+        .comment-author {
+
+          span.says {
+            display: none;
+          }
+          img {
+            border-radius: 50px;
+            margin-right: .5rem;
+          }
+        }
+
+        .comment-metadata {
+
+          padding: 1rem 0;
+          a {
+            color: black;
+            font-size: 14px;
+          }
+        }
+
+        .reply {
+          position: absolute;
+          bottom: -35px;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  div#respond{
+
+    background: #ffffff;
+    padding: 1.5rem;
+    margin: 3rem 0;
+    box-shadow: rgba(100, 100, 111, 0.09) 0px 7px 29px 0px;
+
+    form#commentform {
+      max-width: 55%;
+      margin: auto;
+    }
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+@media screen and (max-width: 778px) {
+  article {
+    display: grid;
+    grid-template-columns: 1fr!important;
+    gap: 1rem;
+    position: relative;
+  }
+}

@@ -1,0 +1,36 @@
+.suitepress-search {
+
+  padding: 2rem 0;
+
+  .search-form-suitepress{
+
+    justify-content: center;
+
+    input[type=search] {
+      padding: 1.3rem 1.2rem;
+      margin: 0;
+      border: 2px solid $theme__bg-color;
+      margin-right: -0.1rem !important;
+      border-radius: 5px 0 0 5px!important;
+
+      :focus{
+        box-shadow: 0 0 0 .02rem rgb(41 128 128 / 25%)!important;
+      }
+    }
+
+    input[type=button], input[type=reset], input[type=submit], button {
+      padding: 0.55rem 2.3rem;
+      font-size: 16px;
+      background: $theme__primary-color;
+      color: $white;
+      border-radius: 0 5px 5px 0!important;
+    }
+
+  }
+
+}
+.suitepress-search .search-form-suitepress input[type=search]:focus{
+  box-shadow: 0 0 0 .02rem rgb(41 128 128 / 25%)!important;
+  border-radius: 20px!important;
+  transition: all 0.1s ease;
+}

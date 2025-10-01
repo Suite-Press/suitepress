@@ -1,0 +1,97 @@
+#suitepress-cover-container{
+  min-height: 700px;
+  align-content: center;
+  background: rgba(0, 128, 128, 0.10);
+  padding: 2rem 0;
+
+  .suitepress-cover-wrapper{
+
+    .suitepress-cover-title{
+      font-size: 50px;
+      line-height: 60px;
+      text-align: center;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.8);
+
+      #typing-container {
+        width: auto;
+        height: 60px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #typing-text {
+        display: inline-block;
+        white-space: nowrap;
+        position: absolute;
+        animation: slide-left 7s linear infinite;
+      }
+
+    }
+    .suitepress-cover-service-wrapper{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-gap: 1rem;
+      margin: 1rem 0;
+
+      .suitepress-cover-service-card{
+        background: $white;
+        box-shadow: 0px 4px 25px 0px rgba(105, 105, 132, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+
+        .sp-content{
+          font-size: 16px;
+          font-weight: 600;
+          color: black;
+          margin-left: 1rem;
+
+          span{
+            font-size: 14px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Responsive Styles */
+
+/* Tablet (601px - 1024px) */
+@media (max-width: 1024px) {
+  .suitepress-cover-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  #suitepress-cover-container .suitepress-cover-wrapper .suitepress-cover-service-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+  .suitepress-cover-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  #suitepress-cover-container .suitepress-cover-wrapper .suitepress-cover-service-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@keyframes slide-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}

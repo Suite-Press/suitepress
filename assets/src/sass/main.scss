@@ -1,0 +1,30 @@
+// Essentials.
+@import "essentials";
+
+// Generic
+@import "2-generic/generic";
+@import "2-generic/gutenberge";
+@import "2-generic/slick-carousel";
+@import "2-generic/latest-posts-static";
+@import "2-generic/search-result";
+@import "2-generic/blog-page";
+@import "2-generic/author-follow-card";
+@import "2-generic/post-card";
+@import "./2-generic/comments";
+@import "./2-generic/headers-styles";
+@import "./2-generic/footer";
+@import "./2-generic/single-blog";
+@import "./2-generic/home-cover";
+@import "./2-generic/search-form";
+@import "./2-generic/wordpress-tutorial";
+@import "./2-generic/technical-support";
+@import "./2-generic/how-course";
+@import "./2-generic/post-carousel";
+
+
+// Layouts.
+@import "4-layouts/posts/meta";
+@import "4-layouts/posts/pagination";
+@import "4-layouts/header/nav/navigation";
+
+// Components

@@ -1,0 +1,82 @@
+.home-page-wrap {
+	.entry-content {
+
+		> * {
+			margin: $margin-top auto $margin-bottom auto;
+		}
+
+		> *:not(.alignfull) {
+			max-width: $site_width;
+			padding: 0 $padding-right 0 $padding-left;
+		}
+
+		> .alignwide {
+			max-width: $wide_width;
+		}
+	}
+}
+
+/* Default Colors */
+.has-black-color { color: #000000 !important; }
+.has-white-color { color: #ffffff !important; }
+.has-red-color { color: #ff0000 !important; }
+.has-green-color { color: #00ff00 !important; }
+.has-blue-color { color: #0000ff !important; }
+
+/* SuitePress Custom Colors */
+.has-suitepress-primary-color { color: #008080 !important; }
+.has-suitepress-secondary-color { color: #4C5D73 !important; }
+.has-suitepress-text-color { color: #4C5D73 !important; }
+.has-suitepress-primary-bg-color { background-color: rgba(0, 128, 128, 0.02) !important; }
+.has-suitepress-bg-color { background-color: #4C5D73 !important; }
+
+/* Background Colors */
+.has-black-background-color { background-color: #000000 !important; }
+.has-white-background-color { background-color: #ffffff !important; }
+.has-red-background-color { background-color: #ff0000 !important; }
+.has-green-background-color { background-color: #00ff00 !important; }
+.has-blue-background-color { background-color: #0000ff !important; }
+
+.has-suitepress-primary-background-color { background-color: #008080 !important; }
+.has-suitepress-secondary-background-color { background-color: #4C5D73 !important; }
+.has-suitepress-text-background-color { background-color: #4C5D73 !important; }
+.has-suitepress-primary-bg-background-color { background-color: rgba(0, 128, 128, 0.02) !important; }
+.has-suitepress-bg-background-color { background-color: #4C5D73 !important; }
+
+
+.wp-block-code {
+	background: #000000;
+	color: #ffffff;
+	font-family: 'Fira Code', 'Courier New', monospace;
+	font-size: 0.95rem;
+	padding: 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	position: relative;
+	line-height: 1.5;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.wp-block-code code {
+	display: block;
+	white-space: pre;
+	color: inherit;
+	background: none!important;
+	border: none!important;
+}
+
+.wp-block-code::before {
+	content: 'Code';
+	position: absolute;
+	top: 0.4rem;
+	right: 0.8rem;
+	font-size: 0.75rem;
+	color: #fff;
+	background: rgb(0, 128, 128);
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	font-weight: bold;
+	text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+// Posts Card Styles
+
+.suitepress-posts-cards-container{
+  .suitepress-posts-cards{
+    padding: .7rem;
+    background-color: $white;
+    box-shadow: $theme__box-shadow-color 0px 7px 29px 0px;
+    border-radius: $border-radius;
+
+    .post-excerpt{
+      .post-card-title{
+        font-size: 20px;
+        color: $black;
+      }
+    }
+  }
+}

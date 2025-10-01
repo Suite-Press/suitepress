@@ -1,0 +1,23 @@
+.author-follow-card{
+  background-color: $white;
+  border: 1px solid $color__border-primary;
+  border-radius: $border__radius-primary;
+  position: sticky;
+  top: 4rem;
+  bottom: 4rem;
+  z-index: 100;
+  box-shadow: $box_shadow-primary;
+
+  .author-follow-button{
+    margin: 1rem 1rem 2rem 1rem;
+   & a{
+     background-color: $theme__primary-color;
+     width: 100%;
+     color: $white;
+     padding: 1rem;
+     display: block;
+     text-align: center;
+     text-decoration: none;
+   }
+  }
+}

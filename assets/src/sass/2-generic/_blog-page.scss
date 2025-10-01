@@ -1,0 +1,28 @@
+.suitepress-blogs-containers{
+
+  .suitepress-blogs-cards{
+    padding: .7rem;
+    background-color: $white;
+    box-shadow: $theme__box-shadow-color 0px 7px 29px 0px;
+    border-radius: $border-radius;
+
+    .entry-header{
+
+      .entry-image {
+        width: 100%;
+        max-width: 100%;
+        .img-container{
+          img{
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+            height: 221px;
+          }
+        }
+      }
+
+      .post-card-title{
+        font-size: 22px;
+      }
+    }
+  }
+}
