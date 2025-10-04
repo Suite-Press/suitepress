@@ -14,7 +14,7 @@ import { RichText } from '@wordpress/block-editor';
  * Register block type.
  */
 registerBlockType( 'suitepress-blocks/heading', {
-	title: __( 'Your Heading with Icon', 'suitepress' ),
+	title: __( 'Heading with Icon', 'suitepress' ),
 	icon: 'editor-spellcheck',
 	description: __('Add Heading and select Icons', 'suitepress'),
 	category: 'suitepress',
