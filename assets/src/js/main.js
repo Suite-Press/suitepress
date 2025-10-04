@@ -31,3 +31,12 @@ import './zustand'
 
 // Home page JS
 import './homePage/index'
+
+// According Blocks JS Frontend
+import './gutenberg/blocks/according/scripts'
+
+// Image Slider Blocks JS Frontend
+import './gutenberg/blocks/image-slider/scripts'
+
+// Image Slider Blocks JS Frontend
+import './gutenberg/blocks/download-button/scripts'

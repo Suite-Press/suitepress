@@ -1,0 +1,434 @@
+/**
+ * Download Button Styles
+ * File: assets/src/scss/blocks/download-button.scss
+ */
+
+.suitepress-download-button-editor,
+.suitepress-download-button {
+  width: 100%;
+  margin: 20px 0;
+
+  // Editor Styles
+  &.suitepress-download-button-editor {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+
+    .download-button-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+
+      h3 {
+        margin: 0;
+        color: #1e1e1e;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    .files-list {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      h4 {
+        margin: 0 0 15px 0;
+        color: #1e1e1e;
+      }
+
+      .files-summary {
+        background: #f8f9fa;
+        padding: 12px 15px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+
+        p {
+          margin: 0;
+          color: #666;
+          font-size: 14px;
+
+          strong {
+            color: #1e1e1e;
+          }
+        }
+      }
+
+      .file-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .file-info {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .file-name {
+            font-weight: 500;
+            color: #1e1e1e;
+          }
+
+          .file-size {
+            font-size: 12px;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    .button-preview {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+
+      h4 {
+        margin: 0 0 15px 0;
+        color: #1e1e1e;
+      }
+
+      .preview-container {
+        text-align: center;
+        padding: 30px;
+        border: 2px dashed #e0e0e0;
+        border-radius: 8px;
+
+        .suitepress-download-btn {
+          background: #007cba;
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #005a87;
+            transform: translateY(-1px);
+          }
+        }
+
+        .lead-capture-preview {
+          margin-top: 20px;
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 6px;
+
+          .preview-note {
+            margin: 0;
+            color: #666;
+            font-style: italic;
+          }
+        }
+
+        .preview-warning {
+          margin: 10px 0 0 0;
+          color: #d63638;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .privacy-settings {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+    }
+  }
+
+  // Frontend Styles
+  &:not(.suitepress-download-button-editor) {
+    .download-button-container {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .suitepress-download-trigger {
+      background: linear-gradient(135deg, #007cba 0%, #005a87 100%);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 124, 186, 0.3);
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 124, 186, 0.4);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &::after {
+        content: '↓';
+        margin-left: 8px;
+        font-weight: bold;
+      }
+    }
+
+    .lead-capture-form {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      animation: slideDown 0.3s ease;
+
+      .form-fields {
+        text-align: left;
+        margin-bottom: 25px;
+
+        .form-group {
+          margin-bottom: 20px;
+
+          label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+          }
+
+          .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: #007cba;
+              box-shadow: 0 0 0 3px rgba(0, 124, 186, 0.1);
+            }
+
+            &::placeholder {
+              color: #999;
+            }
+          }
+
+          &.privacy-agreement {
+            .checkbox-label {
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              cursor: pointer;
+              font-weight: normal;
+              margin: 0;
+
+              input[type="checkbox"] {
+                margin-top: 2px;
+                transform: scale(1.2);
+              }
+
+              .checkmark {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .btn-cancel,
+        .btn-submit {
+          padding: 12px 24px;
+          border: none;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          flex: 1;
+        }
+
+        .btn-cancel {
+          background: #f8f9fa;
+          color: #666;
+          border: 2px solid #e0e0e0;
+
+          &:hover {
+            background: #e9ecef;
+          }
+        }
+
+        .btn-submit {
+          background: #007cba;
+          color: white;
+
+          &:hover {
+            background: #005a87;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 124, 186, 0.3);
+          }
+        }
+      }
+
+      .skip-option {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #f0f0f0;
+
+        .btn-skip {
+          background: none;
+          border: none;
+          color: #666;
+          text-decoration: underline;
+          cursor: pointer;
+          font-size: 14px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #007cba;
+          }
+        }
+      }
+    }
+
+    .download-messages {
+      margin-top: 20px;
+      animation: slideDown 0.3s ease;
+
+      .success-message,
+      .error-message {
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .success-message {
+        background: #d1e7dd;
+        color: #0f5132;
+        border: 1px solid #badbcc;
+      }
+
+      .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .suitepress-download-button {
+    .lead-capture-form {
+      padding: 20px;
+      margin: 0 10px;
+
+      .form-actions {
+        flex-direction: column;
+      }
+    }
+
+    .suitepress-download-trigger {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+// Loading state
+.suitepress-download-trigger.loading {
+  pointer-events: none;
+  opacity: 0.7;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+  }
+
+  &::after {
+    content: 'Preparing download...';
+    margin-left: 0;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .suitepress-download-button {
+    .suitepress-download-trigger {
+      border: 2px solid currentColor;
+    }
+
+    .lead-capture-form {
+      border: 2px solid currentColor;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .suitepress-download-button {
+    .suitepress-download-trigger,
+    .btn-submit {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+    }
+
+    .lead-capture-form {
+      animation: none;
+    }
+  }
+}

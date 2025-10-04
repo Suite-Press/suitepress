@@ -34,6 +34,7 @@ class Assets{
          * except when is_admin() is used to include them conditionally
          */
         add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_editor_assets' ] );
+        add_action('enqueue_block_assets', [$this,'both_enqueue_block_assets']);
     }
     public function suitepress_register_styles(): void
     {
@@ -163,6 +164,19 @@ class Assets{
             filemtime( SUITEPRESS_BUILD_CSS_DIR_PATH . '/blocks.css' ),
             'all'
         );
+    }
+    public function both_enqueue_block_assets(){
+        $style_path = SUITEPRESS_BUILD_CSS_DIR_PATH . '/blocks.css';
+        $style_uri  = SUITEPRESS_BUILD_CSS_URI . '/blocks.css';
+
+        if ( file_exists( $style_path ) ) {
+            wp_enqueue_style(
+                'suitepress-blocks-css',
+                $style_uri,
+                [ 'wp-block-library', 'wp-block-library-theme' ],
+                filemtime( $style_path )
+            );
+        }
     }
 
 }

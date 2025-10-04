@@ -29,7 +29,7 @@ class Blocks{
             [
                 [
                     'slug'  => 'suitepress',
-                    'title' => __( 'SuitePress Blocks', 'suitepress' ),
+                    'title' => __( 'SuitePress Theme Blocks', 'suitepress' ),
                     'icon'  => 'table-row-after',
                 ],
             ]

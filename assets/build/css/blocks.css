@@ -1,6 +1,7 @@
 /*!***************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/blocks.scss ***!
   \***************************************************************************************************************/
+@charset "UTF-8";
 /*---------------------------------
 		Colors Variables
 -----------------------------------*/
@@ -41,6 +42,1154 @@
   color: #FFFFFF !important;
   padding: 8px 30px;
   border-radius: 3px;
+}
+
+/**
+ * Description Block Styles
+ * This file includes both editor and frontend styles
+ */
+.description-block, .wp-block-suitepress-description {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+.description-block .description-text, .wp-block-suitepress-description .description-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+.description-block.description-default, .description-default.wp-block-suitepress-description {
+  border-left: none;
+  background: none;
+}
+.description-block.description-highlighted, .description-highlighted.wp-block-suitepress-description {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+.description-block.description-highlighted .description-text, .description-highlighted.wp-block-suitepress-description .description-text {
+  color: #856404;
+}
+.description-block.description-minimal, .description-minimal.wp-block-suitepress-description {
+  background: transparent;
+  border-left: 2px solid #ddd;
+  padding-left: 15px;
+  padding-right: 0;
+}
+.description-block.description-boxed, .description-boxed.wp-block-suitepress-description {
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.description-block.description-modern-card, .description-modern-card.wp-block-suitepress-description {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+.description-block.description-modern-card .description-text, .description-modern-card.wp-block-suitepress-description .description-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+}
+.description-block.description-note, .description-note.wp-block-suitepress-description {
+  background: #e8f4fd;
+  border-left: 4px solid #2196f3;
+}
+.description-block.description-note .description-text, .description-note.wp-block-suitepress-description .description-text {
+  color: #0c5460;
+}
+.description-block.description-success, .description-success.wp-block-suitepress-description {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+}
+.description-block.description-success .description-text, .description-success.wp-block-suitepress-description .description-text {
+  color: #155724;
+}
+.description-block.description-error, .description-error.wp-block-suitepress-description {
+  background: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+.description-block.description-error .description-text, .description-error.wp-block-suitepress-description .description-text {
+  color: #721c24;
+}
+.description-block.description-gradient, .description-gradient.wp-block-suitepress-description {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  border-radius: 8px;
+}
+.description-block.description-gradient .description-text, .description-gradient.wp-block-suitepress-description .description-text {
+  color: #fff;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .description-block, .wp-block-suitepress-description {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  .description-block .description-text, .wp-block-suitepress-description .description-text {
+    font-size: 14px;
+  }
+}
+
+.wp-block-suitepress-description .description-text[data-is-placeholder-visible=true] {
+  opacity: 0.6;
+}
+.wp-block-suitepress-description:hover {
+  box-shadow: 0 0 0 1px #0073aa;
+}
+.wp-block-suitepress-description.is-selected {
+  box-shadow: 0 0 0 2px #0073aa;
+}
+
+/**
+ * Accordion Frontend Styles
+ * File: src/blocks/accordion/style.scss
+ */
+.suitepress-accordion {
+  margin: 40px 0;
+}
+.suitepress-accordion .accordion-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.suitepress-accordion .accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.suitepress-accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.suitepress-accordion .accordion-item .accordion-header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  transition: background 0.5s ease;
+  user-select: none;
+}
+.suitepress-accordion .accordion-item .accordion-header-item:hover {
+  background: #e9ecef;
+}
+.suitepress-accordion .accordion-item .accordion-header-item .accordion-question {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+  padding-right: 20px;
+}
+.suitepress-accordion .accordion-item .accordion-header-item .accordion-icon {
+  font-size: 28px;
+  font-weight: 500;
+  color: #008080;
+  min-width: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.suitepress-accordion .accordion-item .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer {
+  padding: 20px 25px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer p {
+  margin-bottom: 15px;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer p:last-child {
+  margin-bottom: 0;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer ul, .suitepress-accordion .accordion-item .accordion-content .accordion-answer ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer li {
+  margin-bottom: 8px;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer strong {
+  color: #333;
+  font-weight: 600;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer a {
+  color: #008080;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer a:hover {
+  border-bottom-color: #008080;
+}
+.suitepress-accordion .accordion-item .accordion-content .accordion-answer code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #d63384;
+}
+.suitepress-accordion .accordion-item[data-open=true] .accordion-content {
+  border-top: 1px solid #e0e0e0;
+}
+.suitepress-accordion .accordion-item[data-open=true] .accordion-icon {
+  transform: rotate(180deg);
+}
+.suitepress-accordion .accordion-item[data-open=false] .accordion-content {
+  max-height: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .suitepress-accordion {
+    margin: 30px 0;
+  }
+  .suitepress-accordion .accordion-item .accordion-header-item {
+    padding: 15px 18px;
+  }
+  .suitepress-accordion .accordion-item .accordion-header-item .accordion-question {
+    font-size: 16px;
+  }
+  .suitepress-accordion .accordion-item .accordion-header-item .accordion-icon {
+    font-size: 24px;
+  }
+  .suitepress-accordion .accordion-item .accordion-content .accordion-answer {
+    padding: 15px 18px;
+    font-size: 15px;
+  }
+  .suitepress-accordion-editor {
+    padding: 15px;
+  }
+  .suitepress-accordion-editor .accordion-item-editor {
+    padding: 12px;
+  }
+  .suitepress-accordion-editor .accordion-item-editor .accordion-question,
+  .suitepress-accordion-editor .accordion-item-editor .accordion-answer {
+    font-size: 14px;
+  }
+}
+@media print {
+  .suitepress-accordion .accordion-item {
+    page-break-inside: avoid;
+  }
+  .suitepress-accordion .accordion-item .accordion-content {
+    max-height: none !important;
+    display: block !important;
+  }
+}
+/**
+ * Accordion Editor Styles
+ * File: src/blocks/accordion/editor.scss
+ */
+.suitepress-accordion-editor {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+.suitepress-accordion-editor .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+.suitepress-accordion-editor .accordion-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.suitepress-accordion-editor .accordion-header .components-button.is-primary {
+  background: #008080;
+  border-color: #008080;
+}
+.suitepress-accordion-editor .accordion-header .components-button.is-primary:hover {
+  background: #008080;
+  border-color: #008080;
+}
+.suitepress-accordion-editor .accordion-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.suitepress-accordion-editor .accordion-item-editor {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem 1.2rem 1.2rem;
+  transition: border-color 0.3s;
+}
+.suitepress-accordion-editor .accordion-item-editor:hover {
+  border-color: #008080;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: -1rem;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls .item-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 15px;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls .item-actions {
+  display: flex;
+  gap: 5px;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls .item-actions .components-button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls .item-actions .components-button.is-destructive {
+  color: #dc3545;
+}
+.suitepress-accordion-editor .accordion-item-editor .item-controls .item-actions .components-button.is-destructive:hover {
+  background: #dc3545;
+  color: #fff !important;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-question {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-question:focus {
+  outline: none;
+  border-color: #008080;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-question[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  color: #999;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-answer {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  min-height: 100px;
+  transition: border-color 0.3s;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-answer:focus {
+  outline: none;
+  border-color: #008080;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-answer[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  color: #999;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-answer p {
+  margin-bottom: 10px;
+}
+.suitepress-accordion-editor .accordion-item-editor .accordion-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Image Swiper Slider Styles
+ * File: assets/src/scss/blocks/image-swiper.scss
+ */
+.suitepress-swiper-editor,
+.suitepress-swiper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor,
+.suitepress-swiper.suitepress-swiper-editor {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-header,
+.suitepress-swiper.suitepress-swiper-editor .swiper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-header h3,
+.suitepress-swiper.suitepress-swiper-editor .swiper-header h3 {
+  margin: 0;
+  color: #1e1e1e;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-settings-summary,
+.suitepress-swiper.suitepress-swiper-editor .swiper-settings-summary {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #007cba;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-settings-summary p,
+.suitepress-swiper.suitepress-swiper-editor .swiper-settings-summary p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-settings-summary p strong,
+.suitepress-swiper.suitepress-swiper-editor .swiper-settings-summary p strong {
+  color: #1e1e1e;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-empty-state,
+.suitepress-swiper.suitepress-swiper-editor .swiper-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-empty-state p,
+.suitepress-swiper.suitepress-swiper-editor .swiper-empty-state p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-images-list,
+.suitepress-swiper.suitepress-swiper-editor .swiper-images-list {
+  display: grid;
+  gap: 20px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-controls,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-controls .image-number,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-controls .image-number {
+  font-weight: 600;
+  color: #007cba;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-controls .image-actions,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-controls .image-actions {
+  display: flex;
+  gap: 5px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-preview,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-preview {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-preview img,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-preview img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-caption-wrapper,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-caption-wrapper {
+  padding: 15px;
+}
+.suitepress-swiper-editor.suitepress-swiper-editor .swiper-image-item-editor .image-caption-wrapper label,
+.suitepress-swiper.suitepress-swiper-editor .swiper-image-item-editor .image-caption-wrapper label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-wrapper,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-wrapper {
+  display: flex;
+  transition-timing-function: ease-out;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-slide,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-slide {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-slide .swiper-image,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-slide .swiper-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-slide .swiper-caption,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-slide .swiper-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 30px 20px 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev,
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-top: -25px;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev::after,
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next::after,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev::after,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next::after {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev:hover,
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next:hover,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev:hover,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next:hover {
+  background: rgb(255, 255, 255);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev.swiper-button-disabled,
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next.swiper-button-disabled,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev.swiper-button-disabled,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination {
+  bottom: 10px !important;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 6px;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet:hover,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fff;
+  transform: scale(1.2);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  transform: scale(0.8);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active, .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-main,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-main {
+  transform: scale(1.1);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-prev, .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-next,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-prev,
+.suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination.swiper-pagination-bullets-dynamic .swiper-pagination-bullet.swiper-pagination-bullet-active-next {
+  transform: scale(0.95);
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide {
+  opacity: 0 !important;
+  transition: opacity 0.6s ease;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-active, .suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-prev, .suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-next,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-active,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-prev,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=fade] .swiper-slide.swiper-slide-next {
+  opacity: 1 !important;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=cube],
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=cube] {
+  perspective: 1200px;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=cube] .swiper-wrapper,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=cube] .swiper-wrapper {
+  transform-style: preserve-3d;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=cube] .swiper-slide,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=cube] .swiper-slide {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=flip],
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=flip] {
+  perspective: 1200px;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor)[data-effect=flip] .swiper-slide,
+.suitepress-swiper:not(.suitepress-swiper-editor)[data-effect=flip] .swiper-slide {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.suitepress-swiper-editor:not(.suitepress-swiper-editor).swiper-container-initialized .swiper-slide,
+.suitepress-swiper:not(.suitepress-swiper-editor).swiper-container-initialized .swiper-slide {
+  visibility: visible;
+}
+@media (max-width: 768px) {
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev,
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev::after,
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next::after,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev::after,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next::after {
+    font-size: 16px;
+  }
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-caption,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-caption {
+    padding: 20px 15px 15px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-prev,
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-button-next,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-prev,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-button-next {
+    display: none;
+  }
+  .suitepress-swiper-editor:not(.suitepress-swiper-editor) .swiper-pagination,
+  .suitepress-swiper:not(.suitepress-swiper-editor) .swiper-pagination {
+    bottom: 5px !important;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.swiper-lazy.swiper-lazy-loaded {
+  opacity: 1;
+}
+
+.swiper-lazy-preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 123, 255, 0.2);
+  border-top: 4px solid #007cba;
+  border-radius: 50%;
+  animation: swiper-preloader-spin 1s linear infinite;
+}
+
+@keyframes swiper-preloader-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.swiper-slide:focus {
+  outline: 2px solid #007cba;
+  outline-offset: 2px;
+}
+
+@media (prefers-contrast: high) {
+  .suitepress-swiper .swiper-button-prev,
+  .suitepress-swiper .swiper-button-next {
+    background: white;
+    border: 2px solid black;
+  }
+  .suitepress-swiper .swiper-button-prev::after,
+  .suitepress-swiper .swiper-button-next::after {
+    color: black;
+  }
+  .suitepress-swiper .swiper-pagination-bullet {
+    border: 1px solid black;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .suitepress-swiper .swiper-slide {
+    transition: none;
+  }
+  .suitepress-swiper .swiper-button-prev,
+  .suitepress-swiper .swiper-button-next {
+    transition: none;
+  }
+  .suitepress-swiper .swiper-button-prev:hover,
+  .suitepress-swiper .swiper-button-next:hover {
+    transform: none;
+  }
+}
+/**
+ * Download Button Styles
+ * File: assets/src/scss/blocks/download-button.scss
+ */
+.suitepress-download-button-editor,
+.suitepress-download-button {
+  width: 100%;
+  margin: 20px 0;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor,
+.suitepress-download-button.suitepress-download-button-editor {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .download-button-header,
+.suitepress-download-button.suitepress-download-button-editor .download-button-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .download-button-header h3,
+.suitepress-download-button.suitepress-download-button-editor .download-button-header h3 {
+  margin: 0;
+  color: #1e1e1e;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .download-button-header .button-group,
+.suitepress-download-button.suitepress-download-button-editor .download-button-header .button-group {
+  display: flex;
+  gap: 10px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list,
+.suitepress-download-button.suitepress-download-button-editor .files-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list h4,
+.suitepress-download-button.suitepress-download-button-editor .files-list h4 {
+  margin: 0 0 15px 0;
+  color: #1e1e1e;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .files-summary,
+.suitepress-download-button.suitepress-download-button-editor .files-list .files-summary {
+  background: #f8f9fa;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .files-summary p,
+.suitepress-download-button.suitepress-download-button-editor .files-list .files-summary p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .files-summary p strong,
+.suitepress-download-button.suitepress-download-button-editor .files-list .files-summary p strong {
+  color: #1e1e1e;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .file-item,
+.suitepress-download-button.suitepress-download-button-editor .files-list .file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .file-item:last-child,
+.suitepress-download-button.suitepress-download-button-editor .files-list .file-item:last-child {
+  border-bottom: none;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .file-item .file-info,
+.suitepress-download-button.suitepress-download-button-editor .files-list .file-item .file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .file-item .file-info .file-name,
+.suitepress-download-button.suitepress-download-button-editor .files-list .file-item .file-info .file-name {
+  font-weight: 500;
+  color: #1e1e1e;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .files-list .file-item .file-info .file-size,
+.suitepress-download-button.suitepress-download-button-editor .files-list .file-item .file-info .file-size {
+  font-size: 12px;
+  color: #666;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview,
+.suitepress-download-button.suitepress-download-button-editor .button-preview {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview h4,
+.suitepress-download-button.suitepress-download-button-editor .button-preview h4 {
+  margin: 0 0 15px 0;
+  color: #1e1e1e;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container {
+  text-align: center;
+  padding: 30px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn {
+  background: #007cba;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn:hover,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn:hover {
+  background: #005a87;
+  transform: translateY(-1px);
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .lead-capture-preview,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .lead-capture-preview {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .lead-capture-preview .preview-note,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .lead-capture-preview .preview-note {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .preview-warning,
+.suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .preview-warning {
+  margin: 10px 0 0 0;
+  color: #d63638;
+  font-size: 14px;
+  font-weight: 500;
+}
+.suitepress-download-button-editor.suitepress-download-button-editor .privacy-settings,
+.suitepress-download-button.suitepress-download-button-editor .privacy-settings {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-button-container,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-button-container {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .suitepress-download-trigger,
+.suitepress-download-button:not(.suitepress-download-button-editor) .suitepress-download-trigger {
+  background: linear-gradient(135deg, #007cba 0%, #005a87 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 124, 186, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .suitepress-download-trigger:hover,
+.suitepress-download-button:not(.suitepress-download-button-editor) .suitepress-download-trigger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 124, 186, 0.4);
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .suitepress-download-trigger:active,
+.suitepress-download-button:not(.suitepress-download-button-editor) .suitepress-download-trigger:active {
+  transform: translateY(0);
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .suitepress-download-trigger::after,
+.suitepress-download-button:not(.suitepress-download-button-editor) .suitepress-download-trigger::after {
+  content: "↓";
+  margin-left: 8px;
+  font-weight: bold;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields {
+  text-align: left;
+  margin-bottom: 25px;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group {
+  margin-bottom: 20px;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group label,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input:focus,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input:focus {
+  outline: none;
+  border-color: #007cba;
+  box-shadow: 0 0 0 3px rgba(0, 124, 186, 0.1);
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input::placeholder,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input::placeholder {
+  color: #999;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label input[type=checkbox],
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label input[type=checkbox] {
+  margin-top: 2px;
+  transform: scale(1.2);
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label .checkmark,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group.privacy-agreement .checkbox-label .checkmark {
+  display: none;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel,
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel {
+  background: #f8f9fa;
+  color: #666;
+  border: 2px solid #e0e0e0;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel:hover,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-cancel:hover {
+  background: #e9ecef;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit {
+  background: #007cba;
+  color: white;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit:hover,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-actions .btn-submit:hover {
+  background: #005a87;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 124, 186, 0.3);
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .skip-option,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .skip-option {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .skip-option .btn-skip,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .skip-option .btn-skip {
+  background: none;
+  border: none;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .skip-option .btn-skip:hover,
+.suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .skip-option .btn-skip:hover {
+  color: #007cba;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-messages,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-messages {
+  margin-top: 20px;
+  animation: slideDown 0.3s ease;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-messages .success-message,
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-messages .error-message,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-messages .success-message,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-messages .error-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-messages .success-message,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-messages .success-message {
+  background: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+.suitepress-download-button-editor:not(.suitepress-download-button-editor) .download-messages .error-message,
+.suitepress-download-button:not(.suitepress-download-button-editor) .download-messages .error-message {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .suitepress-download-button .lead-capture-form {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  .suitepress-download-button .lead-capture-form .form-actions {
+    flex-direction: column;
+  }
+  .suitepress-download-button .suitepress-download-trigger {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+.suitepress-download-trigger.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.suitepress-download-trigger.loading::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+.suitepress-download-trigger.loading::after {
+  content: "Preparing download...";
+  margin-left: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-contrast: high) {
+  .suitepress-download-button .suitepress-download-trigger {
+    border: 2px solid currentColor;
+  }
+  .suitepress-download-button .lead-capture-form {
+    border: 2px solid currentColor;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .suitepress-download-button .suitepress-download-trigger,
+  .suitepress-download-button .btn-submit {
+    transition: none;
+  }
+  .suitepress-download-button .suitepress-download-trigger:hover,
+  .suitepress-download-button .btn-submit:hover {
+    transform: none;
+  }
+  .suitepress-download-button .lead-capture-form {
+    animation: none;
+  }
 }
 
 /*# sourceMappingURL=blocks.css.map*/

@@ -30,6 +30,8 @@ class SUITEPRESS_THEME{
         Register_Taxonomies::get_instance();
 //        Custom_Rest_Api::get_instance();
         Widgets::get_instance();
+        Post_Type_Register::get_instance();
+        File_Handler::get_instance();
 
         $this->setup_hooks();
     }
