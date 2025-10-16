@@ -112,7 +112,6 @@ class Assets{
             wp_enqueue_script( 'author-js' );
         }
 
-
         wp_localize_script( 'main-js', 'siteConfig', [
             'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
             'nonce' => [

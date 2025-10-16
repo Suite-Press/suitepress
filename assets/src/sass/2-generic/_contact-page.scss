@@ -1,0 +1,564 @@
+// Contact Page Styles
+.sp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Hero Section
+.sp-contact-hero {
+  background: linear-gradient(135deg, rgb(0 128 128) 0%, rgb(0 128 128) 100%);
+  color: #ffffff;
+  padding: 5rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+    animation: floatBackground 20s ease-in-out infinite;
+  }
+}
+
+.sp-contact-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.sp-contact-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.sp-contact-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin: 0 auto 3rem;
+  max-width: 600px;
+  line-height: 1.6;
+  font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.sp-contact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.sp-contact-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeInUp 0.8s ease-out both;
+
+  &:nth-child(1) { animation-delay: 0.4s; }
+  &:nth-child(2) { animation-delay: 0.6s; }
+}
+
+.sp-stat-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.sp-stat-content {
+  text-align: left;
+}
+
+.sp-stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  background: linear-gradient(135deg, rgb(22 226 226 / 90%) 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sp-stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+// Contact Main Section
+.sp-contact-main {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.sp-contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: start;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// Contact Form Section
+.sp-contact-form-section {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.sp-form-header {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1a2937;
+
+    @media (max-width: 768px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  p {
+    color: #64748b;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+}
+
+.sp-contact-form {
+  .sp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}
+
+.sp-form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.sp-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.sp-form-input,
+.sp-form-select,
+.sp-form-textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #ffffff;
+
+  &:focus {
+    outline: none;
+    border-color: #1a2a6c;
+    box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+  }
+
+  &.sp-form-error {
+    border-color: #dc2626;
+  }
+}
+
+.sp-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.sp-form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.sp-form-error {
+  display: block;
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+.sp-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.sp-form-checkbox {
+  margin-top: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:checked {
+    background-color: #1a2a6c;
+    border-color: #1a2a6c;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+  }
+}
+
+.sp-checkbox-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.sp-form-submit {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, #1a2a6c, #4f46e5);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(26, 42, 108, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.sp-loading-spinner {
+  svg {
+    animation: spin 1s linear infinite;
+  }
+}
+
+.sp-form-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  color: #0369a1;
+  font-size: 0.9rem;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// Contact Info Section
+.sp-contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sp-info-card,
+.sp-faq-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.sp-info-card h3,
+.sp-faq-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #1a2937;
+}
+
+.sp-info-card > p {
+  color: #64748b;
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.sp-contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.sp-contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sp-method-icon {
+  width: 50px;
+  height: 50px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #1a2a6c;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.sp-method-content {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #1a2937;
+  }
+
+  p {
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.sp-social-links {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: #1a2937;
+  }
+}
+
+.sp-social-grid {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sp-social-link {
+  width: 44px;
+  height: 44px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #1a2a6c;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// FAQ Card
+.sp-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sp-faq-item {
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #1a2937;
+  }
+
+  p {
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatBackground {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Form States
+.sp-form-success {
+  border-color: #10b981 !important;
+}
+
+.sp-form-loading {
+  .sp-submit-text {
+    display: none;
+  }
+
+  .sp-loading-spinner {
+    display: flex !important;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .sp-contact-hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .sp-contact-main {
+    padding: 3rem 0;
+  }
+
+  .sp-contact-form-section,
+  .sp-info-card,
+  .sp-faq-card {
+    padding: 1.5rem;
+  }
+}
+
+// Reduced Motion Support
+@media (prefers-reduced-motion: reduce) {
+  .sp-contact-hero::before,
+  .sp-form-submit,
+  .sp-social-link {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .sp-contact-hero-content,
+  .sp-contact-form-section,
+  .sp-info-card,
+  .sp-faq-card {
+    animation: fadeIn 0.5s ease-out both !important;
+  }
+}
+
+// Focus styles for accessibility
+.sp-form-input:focus,
+.sp-form-select:focus,
+.sp-form-textarea:focus,
+.sp-form-checkbox:focus,
+.sp-form-submit:focus,
+.sp-social-link:focus {
+  outline: 2px solid #1a2a6c;
+  outline-offset: 2px;
+}
+
+.sp-form-input:focus:not(:focus-visible),
+.sp-form-select:focus:not(:focus-visible),
+.sp-form-textarea:focus:not(:focus-visible),
+.sp-form-checkbox:focus:not(:focus-visible),
+.sp-form-submit:focus:not(:focus-visible),
+.sp-social-link:focus:not(:focus-visible) {
+  outline: none;
+}

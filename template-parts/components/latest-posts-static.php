@@ -5,72 +5,129 @@
  * @package SuitePress
  */
 $args = [
-    'posts_per_page'         => 6,
+    'posts_per_page'         => 4,
     'post_type'              => 'post',
     'update_post_meta_cache' => false,
     'update_post_term_cache' => false,
 ];
 
 $post_query = new \WP_Query( $args );
-
 ?>
 
-<section id="blog_fr" class="blog-fr">
+<section id="blog_fr" class="blog-section">
     <div class="container">
-        <div class="blog-fr-container">
-
-            <div class="sp-home-title">
-                Explore <span style="color: #008080">  Featured </span> Blogs?
-                <p>
-                    Discover top insights! Explore featured blogs for the latest tips,
-                    trends, and tutorials.
+        <div class="blog-section-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Latest Insights</span>
+                </div>
+                <h2 class="section-title">
+                    Explore <span class="text-accent">Featured</span> Blogs
+                </h2>
+                <p class="section-description">
+                    Stay updated with cutting-edge solutions.
                 </p>
             </div>
 
-            <div class="blog-fr-wrapper">
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <?php if ( $post_query->have_posts() ) : ?>
+                    <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+                        <article class="blog-card">
+                            <!-- Featured Image -->
+                            <div class="blog-card-image">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php
+                                    the_post_custom_thumbnail(
+                                        get_the_ID(),
+                                        'featured-thumbnail',
+                                        [
+                                            'sizes' => '(max-width: 350px) 350px, 510px',
+                                            'class' => 'blog-image',
+                                            'loading' => 'lazy'
+                                        ]
+                                    );
+                                    ?>
+                                <?php else : ?>
+                                    <div class="blog-image-placeholder">
+                                        <span class="placeholder-icon">📝</span>
+                                    </div>
+                                <?php endif; ?>
 
-                <?php
-                if ( $post_query->have_posts() ):
-                while ( $post_query->have_posts() ) :
-                $post_query->the_post();
-                ?>
+                                <!-- Category Badge -->
+                                <div class="category-badge">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ( ! empty( $categories ) ) {
+                                        echo esc_html( $categories[0]->name );
+                                    }
+                                    ?>
+                                </div>
 
-                <div class="blog-fr-card">
-                    <div class="blog-fr-img">
-                        <?php
-                        if ( has_post_thumbnail() ) {
-                            the_post_custom_thumbnail(
-                                get_the_ID(),
-                                'featured-thumbnail',
-                                [
-                                    'sizes' => '(max-width: 350px) 221px, 233px',
-                                    'class' => 'w-100 img-fluid',
-                                ]
-                            );
-                        } else {
-                            ?>
-                            <img src="https://via.placeholder.com/510x340" class="w-100" alt="Card image cap">
-                            <?php
-                        }
-                        ?>
+                                <!-- Post Date -->
+                                <div class="post-date">
+                                    <span class="date-day"><?php echo get_the_date('d'); ?></span>
+                                    <span class="date-month"><?php echo get_the_date('M'); ?></span>
+                                </div>
+                            </div>
+
+                            <!-- Card Content -->
+                            <div class="blog-card-content">
+                                <h3 class="blog-title">
+                                    <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h3>
+
+                                <div class="blog-excerpt">
+                                    <?php suitepress_the_excerpt(80); ?>
+                                </div>
+
+                                <!-- Post Meta -->
+                                <div class="blog-meta">
+                                    <div class="author-avatar">
+                                        <?php echo get_avatar( get_the_author_meta('ID'), 32 ); ?>
+                                    </div>
+                                    <div class="meta-info">
+                                        <span class="author-name"><?php the_author(); ?></span>
+                                        <span class="post-date"><?php echo get_the_date('M j, Y'); ?></span>
+                                    </div>
+                                </div>
+
+                                <!-- Read More Button -->
+                                <div class="blog-card-actions">
+                                    <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more-btn">
+                                        <span>Read Article</span>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <div class="no-posts-message">
+                        <div class="empty-state">
+                            <span class="empty-icon">📝</span>
+                            <h3>No Posts Yet</h3>
+                            <p>Stay tuned! We're preparing some amazing content for you.</p>
+                        </div>
                     </div>
-                    <div class="blog-fr-des">
-                        <?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
-                       <p> <?php suitepress_the_excerpt(60); ?> </p>
-                        <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="">
-                            <?php esc_html_e( 'Read More', 'suitepress' ); ?>
-                        </a>
-                    </div>
-                </div>
-
-                <?php
-                endwhile;
-                else:
-                    echo "No posts found, please add a new posts to previews";
-                endif;
-                wp_reset_postdata(); ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
 
+            <!-- View All Button -->
+            <div class="section-cta">
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="view-all-btn">
+                    View All Articles
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
 </section>

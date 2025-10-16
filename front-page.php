@@ -8,7 +8,6 @@
 get_header();
 
 ?>
-
     <div id="primary">
         <main id="main" class="site-main" role="main">
             <div class="home-page-wrap">
@@ -46,11 +45,8 @@ get_header();
                 //Course Section
                 get_template_part( 'template-parts/components/how-course' );
 
-                //post carousel
-//                get_template_part( 'template-parts/components/posts-carousel' );
-
-
-//                get_template_part( 'template-parts/components/post-card.php' );
+                // post carousel
+                get_template_part( 'template-parts/components/posts-carousel' );
 
                 ?>
             </div>

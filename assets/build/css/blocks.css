@@ -892,7 +892,7 @@
 }
 .suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn,
 .suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn {
-  background: #007cba;
+  background: #008080;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -904,7 +904,7 @@
 }
 .suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn:hover,
 .suitepress-download-button.suitepress-download-button-editor .button-preview .preview-container .suitepress-download-btn:hover {
-  background: #005a87;
+  background: #008080;
   transform: translateY(-1px);
 }
 .suitepress-download-button-editor.suitepress-download-button-editor .button-preview .preview-container .lead-capture-preview,
@@ -941,7 +941,7 @@
 }
 .suitepress-download-button-editor:not(.suitepress-download-button-editor) .suitepress-download-trigger,
 .suitepress-download-button:not(.suitepress-download-button-editor) .suitepress-download-trigger {
-  background: linear-gradient(135deg, #007cba 0%, #005a87 100%);
+  background: linear-gradient(135deg, #ca9700 0%, #008080 100%);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -1006,7 +1006,7 @@
 .suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input:focus,
 .suitepress-download-button:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input:focus {
   outline: none;
-  border-color: #007cba;
+  border-color: #008080;
   box-shadow: 0 0 0 3px rgba(0, 124, 186, 0.1);
 }
 .suitepress-download-button-editor:not(.suitepress-download-button-editor) .lead-capture-form .form-fields .form-group .form-input::placeholder,

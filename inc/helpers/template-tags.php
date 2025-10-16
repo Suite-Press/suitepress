@@ -103,8 +103,7 @@ function suitepress_excerpt_more( $more = '' ) {
     return $more;
 }
 
-function suitepress_pagination(): void
-{
+function suitepress_pagination(): void {
     $allowed_tags = [
         'span' => [
             'class' => []
@@ -116,19 +115,23 @@ function suitepress_pagination(): void
     ];
 
     $args = [
-        'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
+        'before_page_number' => '<span class="page-numbers">',
         'after_page_number' => '</span>',
+        'prev_text' => __('Previous', 'suitepress'),
+        'next_text' => __('Next', 'suitepress'),
+        'type' => 'array'
     ];
-    $pagination_links = paginate_links( $args );
 
-    if ( $pagination_links ) {
+    $pagination_links = paginate_links($args);
+
+    if ($pagination_links) {
         printf(
-            '<nav class="suitepress-pagination clearfix">%s</nav>',
-            wp_kses( $pagination_links, $allowed_tags )
+            '<nav class="suitepress-pagination" aria-label="%s"><div class="page-numbers">%s</div></nav>',
+            esc_attr__('Page navigation', 'suitepress'),
+            wp_kses(implode('', $pagination_links), $allowed_tags)
         );
     }
 }
-
 
 function suitepress_has_gravatar( $user_email ) {
 
@@ -154,6 +157,90 @@ function sutiepress_reading_time(){
     $reading_time = ceil($word_count / 200); // reading speed is 200 wpm (assume)
     echo $reading_time . ' min read';
 }
+
+//New Code Added
+
+
+function suitepress_get_excerpt($length = 25) {
+    $excerpt = get_the_excerpt();
+
+    if (empty($excerpt)) {
+        $excerpt = wp_trim_words(get_the_content(), $length, '...');
+    } else {
+        $excerpt = wp_trim_words($excerpt, $length, '...');
+    }
+
+    return $excerpt;
+}
+
+/**
+ * Calculate reading time
+ */
+function suitepress_get_reading_time() {
+    $content = get_post_field('post_content');
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // 200 words per minute
+
+    if (function_exists('sutiepress_reading_time')) {
+        return sutiepress_reading_time();
+    }
+
+    return $reading_time . ' min read';
+}
+
+/**
+ * Display blog grid
+ */
+function suitepress_display_blog_grid($query = null) {
+    if (!$query) {
+        global $wp_query;
+        $query = $wp_query;
+    }
+
+    if ($query->have_posts()) :
+        echo '<div class="sp-blog-grid">';
+
+        while ($query->have_posts()) : $query->the_post();
+            get_template_part('template-parts/content-blog-card');
+        endwhile;
+
+        echo '</div>';
+
+        wp_reset_postdata();
+    else :
+        get_template_part('template-parts/content-none');
+    endif;
+}
+
+/**
+ * Display pagination
+ */
+function suitepress_display_pagination() {
+    echo '<div class="sp-blog-pagination">';
+    suitepress_pagination();
+    echo '</div>';
+}
+
+/**
+ * Get post meta HTML
+ */
+function suitepress_get_post_meta() {
+    ob_start();
+    ?>
+    <div class="sp-entry-meta">
+        <div class="sp-meta-items">
+            <?php suitepress_posted_on(); ?>
+            <span class="sp-meta-separator">•</span>
+            <?php suitepress_posted_by(); ?>
+            <span class="sp-meta-separator">•</span>
+            <span class="sp-reading-time"><?php echo esc_html(suitepress_get_reading_time()); ?></span>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+
 
 
 

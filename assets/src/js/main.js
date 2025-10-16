@@ -1,3 +1,6 @@
+//Header jS
+import './global/header'
+
 //Import JS
 import './clock';
 
@@ -24,13 +27,13 @@ import './author/follow'
 import '../sass/main.scss';
 
 //carousel js
-import './carousel/index'
+import './carousel'
 
 //Zustand
 import './zustand'
 
 // Home page JS
-import './homePage/index'
+import './homePage'
 
 // According Blocks JS Frontend
 import './gutenberg/blocks/according/scripts'
@@ -40,3 +43,7 @@ import './gutenberg/blocks/image-slider/scripts'
 
 // Image Slider Blocks JS Frontend
 import './gutenberg/blocks/download-button/scripts'
+
+// About Page JS
+import './aboutPage'
+

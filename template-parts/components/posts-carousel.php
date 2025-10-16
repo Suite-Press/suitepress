@@ -5,7 +5,7 @@
  * @package SuitePress
  */
 $args = [
-    'posts_per_page'         => 5,
+    'posts_per_page'         => 8,
     'post_type'              => 'post',
     'update_post_meta_cache' => false,
     'update_post_term_cache' => false,
@@ -13,66 +13,131 @@ $args = [
 
 $post_query = new \WP_Query( $args );
 ?>
-<section id="posts_carousel_home" class="posts-carousel-home">
+<section id="posts_carousel_home" class="featured-posts-carousel">
     <div class="container">
+        <div class="carousel-container">
 
-        <div class="post-carousel-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Latest Insights</span>
+                </div>
+                <h2 class="section-title">
+                    Explore <span class="text-accent">Featured Articles</span>
+                </h2>
+                <p class="section-description">
+                    Discover the latest WordPress tips, tutorials, and industry insights.
+                </p>
+            </div>
 
-           <div class="post-carousel-wrapper">
+            <!-- Carousel Navigation -->
+            <div class="carousel-navigation">
+                <button class="nav-btn prev-btn" aria-label="Previous articles">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-indicators"></div>
+                <button class="nav-btn next-btn" aria-label="Next articles">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
 
-               <div class="sp-home-title">
-                   How <span style="color: #008080">  WordPress Tutorials </span> Works?
-                   <p>
-                       WordPress tutorials guide you step-by-step through website creation,
-                       covering themes, plugins, customization, and more. Learn at your pace
-                       with detailed instructions to build professional, functional, and
-                       engaging WordPress sites effortlessly
-                   </p>
-               </div>
+            <!-- Posts Carousel -->
+            <div class="posts-carousel">
+                <?php if ( $post_query->have_posts() ) : ?>
+                    <?php while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+                        <article class="post-card">
+                            <!-- Featured Image -->
+                            <div class="post-card-image">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php
+                                    the_post_custom_thumbnail(
+                                        get_the_ID(),
+                                        'featured-thumbnail',
+                                        [
+                                            'sizes' => '(max-width: 350px) 350px, 510px',
+                                            'class' => 'post-image',
+                                            'loading' => 'lazy'
+                                        ]
+                                    );
+                                    ?>
+                                <?php else : ?>
+                                    <div class="post-image-placeholder">
+                                        <i class="fa-regular fa-newspaper"></i>
+                                    </div>
+                                <?php endif; ?>
 
-               <div class="posts-carousel">
-                   <?php
-                   if ( $post_query->have_posts() ) :
-                       while ( $post_query->have_posts() ) :
-                           $post_query->the_post();
-                           ?>
-                           <div class="card">
-                               <?php
-                               if ( has_post_thumbnail() ) {
-                                   the_post_custom_thumbnail(
-                                       get_the_ID(),
-                                       'featured-thumbnail',
-                                       [
-                                           'sizes' => '(max-width: 350px) 350px, 233px',
-                                           'class' => 'w-100',
-                                       ]
-                                   );
-                               } else {
-                                   ?>
-                                   <img src="https://via.placeholder.com/510x340" class="w-100" alt="Card image cap">
-                                   <?php
-                               }
-                               ?>
-                               <div class="card-body">
-                                   <?php the_title( '<h3 class="card-title">', '</h3>' ); ?>
-                                   <?php suitepress_the_excerpt('50'); ?>
-                                   <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="btn btn-primary">
-                                       <?php esc_html_e( 'View More', 'suitepress' ); ?>
-                                   </a>
-                               </div>
-                           </div>
-                       <?php
-                       endwhile;
-                   else:
-                       echo "No posts found, please add a new posts to previews";
-                   endif;
-                   wp_reset_postdata();
-                   ?>
-               </div>
+                                <!-- Category Badge -->
+                                <div class="category-badge">
+                                    <?php
+                                    $categories = get_the_category();
+                                    if ( ! empty( $categories ) ) {
+                                        echo esc_html( $categories[0]->name );
+                                    }
+                                    ?>
+                                </div>
 
-           </div>
+                            </div>
+
+                            <!-- Card Content -->
+                            <div class="post-card-content">
+                                <div class="post-meta">
+                                    <span class="post-date"><?php echo get_the_date('M j, Y'); ?></span>
+                                    <span class="post-author">By <?php the_author(); ?></span>
+                                </div>
+
+                                <h3 class="post-title">
+                                    <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h3>
+
+                                <div class="post-excerpt">
+                                    <?php suitepress_the_excerpt(80); ?>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="post-card-footer">
+                                    <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more-btn">
+                                        <span>Read Article</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                    <div class="post-stats">
+                                        <span class="comments">
+                                            <i class="fa-regular fa-comment"></i>
+                                            <?php echo get_comments_number(); ?>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <div class="no-posts-message">
+                        <div class="empty-state">
+                            <i class="fa-regular fa-newspaper"></i>
+                            <h3>No Articles Yet</h3>
+                            <p>Stay tuned! We're preparing amazing content for you.</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+            </div>
+
+            <!-- View All CTA -->
+            <div class="carousel-cta">
+                <a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="view-all-btn">
+                    <span>View All Articles</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
         </div>
-
     </div>
-<section>
+
+    <!-- Background Elements -->
+    <div class="carousel-background">
+        <div class="bg-dot dot-1"></div>
+        <div class="bg-dot dot-2"></div>
+        <div class="bg-dot dot-3"></div>
+    </div>
+</section>

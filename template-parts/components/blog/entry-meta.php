@@ -4,11 +4,13 @@
  *
  * @package SuitePress
  */
-
 ?>
-<div class="entry-meta mb-3 mt-3">
-    <?php
-    suitepress_posted_on();
-    suitepress_posted_by();
-    ?>
+<div class="sp-entry-meta">
+    <div class="sp-meta-items">
+        <?php suitepress_posted_on(); ?>
+        <span class="sp-meta-separator">•</span>
+        <?php suitepress_posted_by(); ?>
+        <span class="sp-meta-separator">•</span>
+        <span class="sp-reading-time"><?php echo esc_html( suitepress_get_reading_time() ); ?></span>
+    </div>
 </div>

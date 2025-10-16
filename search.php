@@ -7,47 +7,52 @@ get_header();
 global $wp_query;
 
 ?>
-    <div id="primary">
-        <main id="main" class="site-main mt-5" role="main">
-
-            <?php  get_search_form(); ?>
-
+<div id="primary">
+    <main id="main" class="site-main" role="main">
+        <div class="search-hero-section">
             <div class="container">
+                <div class="search-hero-content">
+                    <h1 class="search-hero-title"><?php echo $wp_query->found_posts; ?> Results Found</h1>
+                    <p class="search-query">For: "<?php the_search_query(); ?>"</p>
+                </div>
+            </div>
+        </div>
 
-                <header class="mb-5 search-result-header">
-                    <h1 class="page-title"> <?php echo $wp_query->found_posts; ?>
-                        <span> <?php _e( 'Search Results Found For', 'suitepress' ); ?>: </span> "<?php the_search_query(); ?>"
-                    </h1>
-                </header>
-
-                <div class="row">
-
+        <div class="container search-results-container">
+            <div class="search-results-layout">
+                <div class="search-results-main">
                     <?php get_template_part( 'template-parts/author/posts-list-view' ); ?>
-
-                    <div class="col-md-4 col-lg-4 col-sm-12">
-                        <div class="most-read-category">
-                            <header class="mb-3">
-                                <h3 class="category-title"> Most Read Category Posts </h3>
-                                <ul>
-                                    <?php
-                                    $categories = get_categories([
-                                        'orderby' => 'count',
-                                        'order' => 'DESC',
-                                        'number' => 10,
-                                    ]);
-
-                                    foreach ( $categories as $category ) {
-                                        echo '<li><a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a></li>';
-                                    }
-                                    ?>
-                                </ul>
-                            </header>
-                        </div>
-                    </div>
-
                 </div>
 
+                <div class="search-results-sidebar">
+<!--                    <div class="sidebar-widget">-->
+<!--                        <h3 class="widget-title">Popular Categories</h3>-->
+<!--                        <ul class="category-list">-->
+<!--                            --><?php
+//                            $categories = get_categories([
+//                                'orderby' => 'count',
+//                                'order' => 'DESC',
+//                                'number' => 10,
+//                            ]);
+//
+//                            foreach ( $categories as $category ) {
+//                                echo '<li class="category-item"><a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="category-link"><span class="category-name">' . esc_html( $category->name ) . '</span><span class="post-count">' . esc_html( $category->count ) . '</span></a></li>';
+//                            }
+//                            ?>
+<!--                        </ul>-->
+<!--                    </div>-->
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Need More Help?</h3>
+                        <div class="help-cta">
+                            <p>Can't find what you're looking for?</p>
+                            <a href="/contact" class="cta-button">Contact Our Experts</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
+</div>
+
 <?php get_footer(); ?>
