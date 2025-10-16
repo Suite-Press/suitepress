@@ -6,6 +6,12 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
+@media (max-width: 600px) {
+	.container {
+		margin: 0px!important;
+	}
+}
+
 /* stylelint-disable */
 *,
 *:before,
@@ -325,10 +331,10 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	display: inline-block;
-	height: 20px;
+	height: 46px;
 	width: 206px;
 	padding: 14px 6px; /* adjusting border-box difference on live site */
-	margin: 0 0 10px;
+	//margin: 0 0 10px;
 	line-height: 1.43;
 	color: $gray-300;
 	vertical-align: middle;

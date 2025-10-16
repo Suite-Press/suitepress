@@ -1,6 +1,4 @@
 .comments-area-suitepress {
-
-
   h3.comments-title-suitepress {
     border-bottom: 2px solid rgba(100, 100, 111, 0.2);
     margin-bottom: 2rem;
@@ -102,18 +100,5 @@
       max-width: 55%;
       margin: auto;
     }
-  }
-
-}
-
-@media screen and (max-width: 992px) {
-
-}
-@media screen and (max-width: 778px) {
-  article {
-    display: grid;
-    grid-template-columns: 1fr!important;
-    gap: 1rem;
-    position: relative;
   }
 }

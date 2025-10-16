@@ -109,7 +109,7 @@
         border-radius: 8px;
 
         .suitepress-download-btn {
-          background: #007cba;
+          background: #008080;
           color: white;
           border: none;
           padding: 12px 24px;
@@ -120,7 +120,7 @@
           transition: all 0.3s ease;
 
           &:hover {
-            background: #005a87;
+            background: #008080;
             transform: translateY(-1px);
           }
         }
@@ -163,7 +163,7 @@
     }
 
     .suitepress-download-trigger {
-      background: linear-gradient(135deg, #007cba 0%, #005a87 100%);
+      background: linear-gradient(135deg, #ca9700 0%, #008080 100%);
       color: white;
       border: none;
       padding: 15px 30px;
@@ -224,7 +224,7 @@
 
             &:focus {
               outline: none;
-              border-color: #007cba;
+              border-color: #008080;
               box-shadow: 0 0 0 3px rgba(0, 124, 186, 0.1);
             }
 

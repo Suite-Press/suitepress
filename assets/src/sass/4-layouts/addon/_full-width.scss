@@ -1,441 +1,571 @@
-/* =================================================================
-   Addons Showcase Template Styles
-   ================================================================= */
-
-/* Hero Section with Shimmer Effect */
+// Professional Addons Hero Section
 .suitepress-addons-hero {
-  background: linear-gradient(135deg, #4c5d72 0%, #298080 100%);
-  padding: 80px 0;
+  background: linear-gradient(135deg, rgb(0 128 128) 0%, rgb(0 128 128) 100%);
+  color: white;
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 60px;
-}
 
-.suitepress-addons-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
   }
-  100% {
-    left: 100%;
+
+  .hero-badge {
+    margin-bottom: 20px;
+
+    .badge {
+      background: $theme_primary-color;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: #ffffff 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
   }
-}
 
-.hero-content {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  line-height: 1.2;
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer-text 3s linear infinite;
-}
-
-@keyframes shimmer-text {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
-.hero-description {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.hero-description p {
-  margin-bottom: 0;
-}
-
-/* Addons Grid Section */
-.suitepress-addons-grid {
-  padding: 60px 0;
-  background: #f8f9fa;
-}
-
-.addons-row {
-  margin-bottom: 40px;
-}
-
-.addon-column {
-  margin-bottom: 30px;
-  display: flex;
-}
-
-.addon-card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.addon-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.addon-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 250px;
-  background: linear-gradient(135deg, #667eea 0%, #008080 100%);
-}
-
-.addon-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.addon-card:hover .addon-image {
-  transform: scale(1.05);
-}
-
-.addon-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 15px;
-}
-
-.addon-badge {
-  background: rgba(255, 255, 255, 0.95);
-  color: #008080;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.addon-content {
-  padding: 25px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.addon-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 15px;
-  line-height: 1.3;
-}
-
-.addon-description {
-  color: #4a5568;
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 15px;
-  flex: 1;
-}
-
-.addon-description p {
-  margin-bottom: 0;
-}
-
-.addon-meta {
-  padding-top: 15px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.addon-version {
-  display: inline-block;
-  background: #edf2f7;
-  color: #4a5568;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-/* Donation Section */
-.suitepress-donation-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  position: relative;
-}
-
-.donation-card {
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: 16px;
-  padding: 60px 40px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.donation-icon {
-  color: #667eea;
-  margin-bottom: 25px;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-}
-
-.donation-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 20px;
-}
-
-.donation-description {
-  font-size: 1.125rem;
-  color: #4a5568;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-
-.donation-actions {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-}
-
-.btn-donate {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 36px;
-  border-radius: 50px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-donate.primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
-}
-
-.btn-donate.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-  color: #ffffff;
-}
-
-.btn-donate.secondary {
-  background: #ffffff;
-  color: #667eea;
-  border: 2px solid #667eea;
-}
-
-.btn-donate.secondary:hover {
-  background: #667eea;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.donation-benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #2d3748;
-  font-weight: 500;
-}
-
-.benefit-item svg {
-  color: #48bb78;
-  flex-shrink: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .hero-description {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $white;
   }
 
-  .donation-title {
-    font-size: 2rem;
-  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
 
-  .donation-card {
-    padding: 40px 30px;
+    .stat-item {
+      text-align: center;
+      border-right: 2px solid;
+      padding-right: 2rem;
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        padding: .2rem 0.5rem;
+        font-weight: 600;
+      }
+    }
+    .stat-item:last-child {
+      border: none;
+      padding-right: 0rem;
+    }
   }
 }
 
-@media (max-width: 767px) {
+// Responsive Design
+@media (max-width: 768px) {
   .suitepress-addons-hero {
-    padding: 60px 0;
+    padding: 60px 0 40px;
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+      flex-direction: column;
+      .stat-item {
+        padding-right: 0;
+        border-right: none;
+      }
+
+      .stat-item .stat-number {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.sp-addons-section {
+  padding: 80px 0;
+  background: #f8fafc;
+
+  .sp-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .sp-section-badge {
+      display: inline-block;
+      background: $theme_primary-color;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .sp-section-description {
+      font-size: 18px;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   }
 
-  .hero-title {
-    font-size: 2rem;
+  .sp-addons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1rem;
+    margin-bottom: 40px;
   }
 
-  .hero-description {
-    font-size: 1rem;
+  .sp-addon-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: $theme_primary-color;
+    }
   }
 
-  .addon-column {
+  .sp-addon-header {
+    position: relative;
+  }
+
+  .sp-addon-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .sp-addon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $theme_primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .sp-addon-btn {
+    background: white;
+    color: $theme_primary-color;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .sp-addon-header:hover {
+    .sp-addon-overlay {
+      opacity: 1;
+    }
+
+    .sp-addon-image img {
+      transform: scale(1.05);
+    }
+  }
+
+  .sp-addon-category {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: $theme_primary-color;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .sp-addon-body {
+    padding: 24px 1rem 0 1rem;
+    flex: 1;
+  }
+
+  .sp-addon-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .sp-addon-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+    flex: 1;
+  }
+
+  .sp-addon-version {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .sp-addon-description {
+    color: #64748b;
+    line-height: 1.6;
     margin-bottom: 20px;
   }
 
-  .donation-title {
-    font-size: 1.75rem;
-  }
-
-  .donation-description {
-    font-size: 1rem;
-  }
-
-  .donation-actions {
+  .sp-addon-features {
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    gap: 8px;
   }
 
-  .btn-donate {
-    width: 100%;
+  .sp-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #64748b;
+
+    svg {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+  }
+
+  .sp-addon-footer {
+    padding: 0 24px 24px;
+    margin-top: auto;
+  }
+
+  .sp-addon-meta {
+    margin-bottom: 16px;
+  }
+
+  .sp-addon-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .sp-tag {
+    background: #ffffff;
+    color: #008080;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+  .sp-addon-cta {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
+    background: $theme_primary-color;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      background: $theme_primary-color;
+      transform: translateY(-1px);
+    }
   }
 
-  .donation-benefits {
-    grid-template-columns: 1fr;
+  .sp-results-count {
+    text-align: center;
+
+    p {
+      color: #64748b;
+      font-size: 16px;
+
+      strong {
+        color: #1e293b;
+      }
+    }
+  }
+
+  .sp-no-results {
+    text-align: center;
+    padding: 80px 20px;
+
+    .sp-no-results-icon {
+      margin-bottom: 24px;
+      color: #cbd5e1;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #64748b;
+      margin-bottom: 24px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .sp-addons-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .sp-addons-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sp-addon-body,
+    .sp-addon-footer {
+      padding: 20px;
+    }
   }
 }
 
-/* Page Content Fallback */
-.page-content {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.sp-enterprise-section {
+  padding: 80px 0;
+  background: #1e293b;
+  color: white;
+
+  .sp-enterprise-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .sp-enterprise-text {
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    > p {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+  }
+
+  .sp-enterprise-features {
+    margin-top: 40px;
+  }
+
+  .sp-feature-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .sp-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    svg {
+      color: $theme_primary-color;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    strong {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    span {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+  }
+
+  .sp-cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 32px;
+    backdrop-filter: blur(20px);
+  }
+
+  .sp-cta-card {
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    > p {
+      color: #cbd5e1;
+      margin-bottom: 24px;
+    }
+  }
+
+  .sp-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .sp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .sp-btn-primary {
+    background: $theme_primary-color;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: $theme_primary-color;
+      transform: translateY(-1px);
+    }
+  }
+
+  .sp-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+  }
+
+  .sp-cta-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+
+  .sp-guarantee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+
+    svg {
+      color: #10b981;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .sp-enterprise-content {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .sp-enterprise-text {
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .sp-cta-card {
+      padding: 24px;
+    }
+  }
 }
 
-.page-content h2 {
-  color: #2d3748;
-  margin-bottom: 20px;
-}
-
-.page-content p {
-  color: #4a5568;
-  line-height: 1.8;
-}
-.addon-categories {
-  margin-top: 10px;
-}
-
-.addon-category-tag {
-  display: inline-block;
-  padding: 3px 8px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  background: #f0f0f0;
-  border-radius: 3px;
-  font-size: 12px;
-}
-
-.category-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.addons-count {
-  text-align: center;
-  margin-top: 30px;
-  color: #666;
-}
-.addon-card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.addon-card-link:hover {
-  transform: translateY(-5px);
-}
-
-.addon-card-link:hover .addon-card {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-.addon-card {
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.addon-card-footer {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  text-align: center;
-}
-
-.view-details {
-  color: #0073aa;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.addon-card-link:hover .view-details {
-  color: #005177;
-}
