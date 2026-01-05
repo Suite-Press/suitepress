@@ -85,7 +85,7 @@ function suitepress_the_excerpt( $trim_character_count = 0 ) {
         return;
     }
 
-    $excerpt = wp_html_excerpt( get_the_excerpt( $post_ID ), $trim_character_count, '[...]' );
+    $excerpt = wp_html_excerpt( get_the_excerpt( $post_ID ), $trim_character_count, '...' );
 
 
     echo $excerpt;

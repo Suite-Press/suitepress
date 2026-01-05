@@ -32,6 +32,11 @@ class Blocks{
                     'title' => __( 'SuitePress Theme Blocks', 'suitepress' ),
                     'icon'  => 'table-row-after',
                 ],
+                [
+                    'slug'  => 'suitepress-plugins',
+                    'title' => __( 'SuitePress Plugins Blocks', 'suitepress' ),
+                    'icon'  => 'table-row-after',
+                ],
             ]
         );
 

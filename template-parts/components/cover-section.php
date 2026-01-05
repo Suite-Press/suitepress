@@ -10,12 +10,12 @@
         <div class="suitepress-cover-wrapper">
             <!-- Main Content -->
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-text"> Trust to build your problem solutions </span>
+                <div class="hero-badge wave-text">
+                    <h4 class="badge-text"> Code. Create. <span>S</span><span>c</span><span>a</span><span>l</span><span>e</span> </h4>
                 </div>
 
                 <h1 class="suitepress-cover-title">
-                    Elevate Your WordPress Experience with <br>
+                    Where Code Becomes Craft. <br>
                     <div class="typing-wrapper">
                         <span class="typing-text" id="typing-text"></span>
                         <span class="typing-cursor">|</span>
@@ -33,9 +33,9 @@
                     </div>
                     <div class="search-suggestions">
                         <span>Popular: </span>
-                        <a href="#">WordPress Security</a>
-                        <a href="#">Custom Themes</a>
-                        <a href="#">Plugin Development</a>
+                        <a href="#">SVN repository</a>
+                        <a href="#">Ecommerce Themes</a>
+                        <a href="#">Fluent Addons</a>
                     </div>
                 </div>
             </div>
@@ -47,12 +47,8 @@
                         <img src="<?php echo SUITEPRESS_DIR_URI.'/assets/src/img/cover/wordpress-tutorial.png' ?>" alt="WordPress Tutorials" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3>WordPress Tutorials</h3>
-                        <p>Master WordPress with comprehensive tutorials</p>
-                        <span class="card-count">Coming soon...</span>
-                    </div>
-                    <div class="card-hover">
-                        <a href=""> <span>Explore Tutorials →</span> </a>
+                        <h3>Tech Tutorials</h3>
+                        <p>Comprehensive tutorials</p>
                     </div>
                 </div>
 
@@ -63,10 +59,6 @@
                     <div class="card-content">
                         <h3>Expert Insights</h3>
                         <p>Latest trends and best practices</p>
-                        <span class="card-count">Weekly Updates</span>
-                    </div>
-                    <div class="card-hover">
-                        <a href="<?php  ?>"> <span>Read Blogs →</span> </a>
                     </div>
                 </div>
 
@@ -75,12 +67,8 @@
                         <img src="<?php echo SUITEPRESS_DIR_URI.'/assets/src/img/cover/wordpress-plugin.png' ?>" alt="WordPress Plugins" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3>Premium Plugins</h3>
+                        <h3>Free WP Addons</h3>
                         <p>Enhance functionality </p>
-                        <span class="card-count">Coming soon...</span>
-                    </div>
-                    <div class="card-hover">
-                        <span>Browse Plugins →</span>
                     </div>
                 </div>
 
@@ -89,12 +77,8 @@
                         <img src="<?php echo SUITEPRESS_DIR_URI.'/assets/src/img/cover/wordpress-plugin.png' ?>" alt="WordPress Themes" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3>Modern Themes</h3>
+                        <h3>Ecommerce Themes</h3>
                         <p>Responsive, SEO-optimized </p>
-                        <span class="card-count">Coming soon...</span>
-                    </div>
-                    <div class="card-hover">
-                        <span>View Themes →</span>
                     </div>
                 </div>
 
@@ -105,10 +89,6 @@
                     <div class="card-content">
                         <h3>Custom Development</h3>
                         <p>Tailored solutions </p>
-                        <span class="card-count">24/7 Support</span>
-                    </div>
-                    <div class="card-hover">
-                        <span>Get Quote →</span>
                     </div>
                 </div>
 
@@ -117,31 +97,12 @@
                         <img src="<?php echo SUITEPRESS_DIR_URI.'/assets/src/img/cover/tech-support.png' ?>" alt="Technical Support" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3>Expert Support</h3>
-                        <p>Technical support </p>
-                        <span class="card-count">1hr Response</span>
-                    </div>
-                    <div class="card-hover">
-                        <span>Get Support →</span>
+                        <h3>Free Technical Support</h3>
+                        <p>For WordPress Sites</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Trust Indicators -->
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <span class="trust-number">1</span>
-                    <span class="trust-label">Developers</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">1k+</span>
-                    <span class="trust-label">Downloads</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">24/7</span>
-                    <span class="trust-label">Support</span>
-                </div>
-            </div>
         </div>
     </div>
 

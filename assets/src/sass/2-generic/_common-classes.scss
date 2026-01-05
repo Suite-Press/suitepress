@@ -79,3 +79,20 @@
 .visible {
 	visibility: visible;
 }
+
+div#content .container .content {
+	padding: 3rem;
+}
+div#content .container .content p {
+	text-align: center;
+}
+div#content .container .content .fst_login_form_auth_wrapper {
+	margin: 3rem 0 0;
+}
+div#content .container .content .fst_login_form_auth_wrapper .fst_login_wrapper {
+	max-width: 500px;
+	margin: 0 auto;
+}
+div#content .container .content .fst_login_form_auth_wrapper .fst_login_wrapper input#wp-submit {
+	background: rgba(0, 128, 128, 0.9);
+}

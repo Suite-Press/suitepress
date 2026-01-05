@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const words = [
-        'Expert WordPress Solutions',
-        'Premium Plugins & Themes',
-        'Custom Development',
-        'Technical Excellence',
-        'Professional Support',
-        'Innovative Features',
-        'Reliable Performance'
+        'Technical Blogs',
+        'Tech Tutorials',
+        'Free plugins',
+        'Free Addons',
+        'Free WP Support',
+        'WP Tips'
     ];
 
     const typingElement = document.getElementById('typing-text');
@@ -48,56 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the typing effect
     typeWriter();
-});
-
-
-//Header
-document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.querySelector('.sp-top-banner');
-    const closeBtn = document.querySelector('.sp-banner-close');
-
-    // Check if user has dismissed the banner
-    const bannerDismissed = localStorage.getItem('spBannerDismissed');
-
-    if (bannerDismissed === 'true') {
-        banner.remove();
-        return;
-    }
-
-    // Close banner functionality
-    closeBtn.addEventListener('click', function() {
-        // Add hide animation
-        banner.classList.add('sp-banner-hidden');
-
-        // Remove from DOM after animation
-        setTimeout(() => {
-            banner.remove();
-        }, 500);
-
-        // Remember user's choice
-        localStorage.setItem('spBannerDismissed', 'true');
-    });
-
-    // Add intersection observer for performance
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('sp-banner-visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(banner);
-
-    // Add feature tooltips for mobile
-    if (window.innerWidth <= 640) {
-        const featureItems = document.querySelectorAll('.sp-feature-item');
-        featureItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const tooltip = this.querySelector('.sp-feature-text');
-                alert(tooltip.getAttribute('data-tooltip') || tooltip.textContent + ' - ' + this.getAttribute('title'));
-            });
-        });
-    }
 });

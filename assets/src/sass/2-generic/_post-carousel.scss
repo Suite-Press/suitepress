@@ -55,6 +55,10 @@ $carousel-border: #e2e8f0;
     position: relative;
     z-index: 2;
   }
+  .slick-dots {
+    display: none!important;
+  }
+
 }
 
 // Section Header
@@ -63,8 +67,6 @@ $carousel-border: #e2e8f0;
   margin-bottom: 3rem;
 
   .section-badge {
-    margin-bottom: 1rem;
-
     span {
       display: inline-block;
       background: rgba($carousel-primary, 0.1);
@@ -79,8 +81,8 @@ $carousel-border: #e2e8f0;
   }
 
   .section-title {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 500;
     color: $carousel-dark;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -95,7 +97,7 @@ $carousel-border: #e2e8f0;
   }
 
   .section-description {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: $carousel-text;
     line-height: 1.6;
     max-width: 600px;
@@ -193,7 +195,6 @@ $carousel-border: #e2e8f0;
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid $carousel-border;
   transition: all 0.3s ease;
   scroll-snap-align: start;
@@ -203,7 +204,6 @@ $carousel-border: #e2e8f0;
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 
     .post-card-image .post-image {
       transform: scale(1.05);
@@ -226,6 +226,7 @@ $carousel-border: #e2e8f0;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      border-radius: 10px 10px 0 0;
     }
 
     .post-image-placeholder {
@@ -271,7 +272,7 @@ $carousel-border: #e2e8f0;
   }
 
   .post-card-content {
-    padding: 1.5rem;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -285,7 +286,7 @@ $carousel-border: #e2e8f0;
       color: $carousel-text;
 
       .post-date {
-        font-weight: 600;
+        font-weight: 400;
       }
 
       .post-author {
@@ -294,14 +295,13 @@ $carousel-border: #e2e8f0;
     }
 
     .post-title {
-      margin-bottom: 1rem;
       line-height: 1.4;
 
       a {
         color: $carousel-dark;
         text-decoration: none;
-        font-size: 1.25rem;
-        font-weight: 700;
+        font-size: 1.15rem;
+        font-weight: 500;
         transition: color 0.3s ease;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -312,17 +312,6 @@ $carousel-border: #e2e8f0;
           color: $carousel-primary;
         }
       }
-    }
-
-    .post-excerpt {
-      color: $carousel-text;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
     }
 
     .post-card-footer {
@@ -447,7 +436,7 @@ $carousel-border: #e2e8f0;
     margin-bottom: 2rem;
 
     .section-title {
-      font-size: 2rem;
+      font-size: 1rem;
     }
 
     .section-description {

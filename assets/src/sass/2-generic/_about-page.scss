@@ -34,8 +34,8 @@
 }
 
 .sp-about-title {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin: 0 0 1.5rem;
   background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
   -webkit-background-clip: text;
@@ -120,7 +120,7 @@
 
 .sp-mission-card {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 1.5rem;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -140,7 +140,7 @@
   width: 80px;
   height: 80px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #dcd435, rgba(0, 128, 128, 0.73));
+  background: linear-gradient(135deg, rgba(0, 128, 128, 0.9) 0%, #ced4da 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -155,9 +155,12 @@
 
 .sp-mission-card h3 {
   font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 1rem;
+  font-weight: 600;
   color: #1a2937;
+  position: absolute;
+  top: 0;
+  transform: rotate(318deg);
+  margin: 4rem 0 1rem;
 }
 
 .sp-mission-card p {
@@ -179,8 +182,8 @@
   animation: fadeInUp 0.8s ease-out both;
 
   h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 500;
     margin: 0 0 1rem;
     color: #1a2937;
 
@@ -228,7 +231,7 @@
   width: 60px;
   height: 60px;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #dcd435, rgba(0, 128, 128, 0.73));
+  background: linear-gradient(135deg, rgba(0, 128, 128, 0.9) 0%, #ced4da 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -325,7 +328,7 @@
   width: 60px;
   height: 60px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, #dcd435, rgba(0, 128, 128, 0.73));
+  background:linear-gradient(135deg, rgba(0, 128, 128, 0.9) 0%, #ced4da 100%);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
@@ -346,80 +349,6 @@
   color: #64748b;
   line-height: 1.6;
   margin: 0;
-}
-
-// CTA Section
-.sp-about-cta {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, rgba(0, 128, 128, 0.73) 100%);
-  color: #ffffff;
-  text-align: center;
-}
-
-.sp-cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  animation: fadeInUp 0.8s ease-out both;
-}
-
-.sp-cta-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 1rem;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-}
-
-.sp-cta-content p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin: 0 0 2.5rem;
-  line-height: 1.6;
-}
-
-.sp-cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.sp-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border: 2px solid transparent;
-
-  &.sp-btn-primary {
-    background: #4f46e5;
-    color: #ffffff;
-
-    &:hover {
-      background: #4338ca;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
-    }
-  }
-
-  &.sp-btn-secondary {
-    background: transparent;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.3);
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: translateY(-2px);
-    }
-  }
 }
 
 // Animations

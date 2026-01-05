@@ -372,12 +372,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -385,8 +379,8 @@ function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Sym
 function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 /**
- * Download Button Block - Updated with file handling and webhook mapping
- * File: assets/src/js/blocks/download-button/block.js
+ * Download Button Block - Simple file download button
+ * File: assets/src/js/gutenberg/blocks/download-button/index.js
  */
 
 
@@ -394,10 +388,10 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('suitepress/download-button', {
   title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download Button', 'suitepress'),
-  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download button with optional lead capture and webhook integration', 'suitepress'),
+  description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Simple download button for files', 'suitepress'),
   category: 'suitepress',
   icon: 'download',
-  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('download', 'suitepress'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('button', 'suitepress'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('lead capture', 'suitepress'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('webhook', 'suitepress')],
+  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('download', 'suitepress'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('button', 'suitepress'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('file', 'suitepress')],
   attributes: {
     files: {
       type: 'array',
@@ -405,67 +399,11 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
     },
     buttonText: {
       type: 'string',
-      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download Now', 'suitepress')
-    },
-    enableLeadCapture: {
-      type: 'boolean',
-      default: true
-    },
-    requireLeadCapture: {
-      type: 'boolean',
-      default: false
-    },
-    webhookUrl: {
-      type: 'string',
-      default: ''
-    },
-    webhookMethod: {
-      type: 'string',
-      default: 'POST'
-    },
-    webhookHeaders: {
-      type: 'string',
-      default: '{"Content-Type": "application/json"}'
-    },
-    fieldMappings: {
-      type: 'object',
-      default: {
-        name: 'name',
-        email: 'email',
-        phone: 'phone'
-      }
-    },
-    successMessage: {
-      type: 'string',
-      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Thank you! Your download will begin shortly.', 'suitepress')
-    },
-    errorMessage: {
-      type: 'string',
-      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Something went wrong. Please try again.', 'suitepress')
-    },
-    privacyText: {
-      type: 'string',
-      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('I agree to the privacy policy and terms of service.', 'suitepress')
-    },
-    requirePrivacy: {
-      type: 'boolean',
-      default: true
+      default: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download', 'suitepress')
     },
     downloadType: {
       type: 'string',
       default: 'zip' // 'zip' or 'individual'
-    },
-    leadStorage: {
-      type: 'string',
-      default: 'both' // 'webhook', 'local', 'both'
-    },
-    autoCreateFluentContact: {
-      type: 'boolean',
-      default: true
-    },
-    fluentLists: {
-      type: 'array',
-      default: []
     }
   },
   edit: function edit(_ref) {
@@ -476,33 +414,39 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
     });
     var files = attributes.files,
       buttonText = attributes.buttonText,
-      enableLeadCapture = attributes.enableLeadCapture,
-      requireLeadCapture = attributes.requireLeadCapture,
-      webhookUrl = attributes.webhookUrl,
-      webhookMethod = attributes.webhookMethod,
-      webhookHeaders = attributes.webhookHeaders,
-      fieldMappings = attributes.fieldMappings,
-      successMessage = attributes.successMessage,
-      errorMessage = attributes.errorMessage,
-      privacyText = attributes.privacyText,
-      requirePrivacy = attributes.requirePrivacy,
       downloadType = attributes.downloadType;
-    var handleFileSelect = function handleFileSelect(event) {
-      var selectedFiles = Array.from(event.target.files);
-      var newFiles = selectedFiles.map(function (file) {
+    var handleFileSelect = function handleFileSelect(selectedMedia) {
+      // Handle both single and multiple selections
+      var selectedFiles = Array.isArray(selectedMedia) ? selectedMedia : [selectedMedia];
+      var newFiles = selectedFiles.map(function (media) {
+        // Extract filename from URL if not available
+        var fileName = media.filename || media.title || '';
+        if (!fileName && media.url) {
+          var urlParts = media.url.split('/');
+          fileName = urlParts[urlParts.length - 1].split('?')[0];
+        }
+        if (!fileName) {
+          fileName = "file-".concat(media.id);
+        }
         return {
-          id: 'file-' + Date.now() + Math.random(),
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          file: file,
-          url: URL.createObjectURL(file) // Create object URL for preview
+          id: media.id,
+          name: fileName,
+          url: media.url,
+          size: media.filesizeInBytes || media.fileSize || 0,
+          type: media.mime || media.type || 'application/octet-stream'
         };
       });
-      setAttributes({
-        files: [].concat(_toConsumableArray(files), _toConsumableArray(newFiles))
+
+      // Merge with existing files, avoiding duplicates
+      var existingIds = files.map(function (f) {
+        return f.id;
       });
-      event.target.value = '';
+      var uniqueNewFiles = newFiles.filter(function (f) {
+        return !existingIds.includes(f.id);
+      });
+      setAttributes({
+        files: [].concat(_toConsumableArray(files), _toConsumableArray(uniqueNewFiles))
+      });
     };
     var removeFile = function removeFile(index) {
       var newFiles = files.filter(function (file, i) {
@@ -511,26 +455,6 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
       setAttributes({
         files: newFiles
       });
-    };
-    var openFileManager = function openFileManager() {
-      document.getElementById('suitepress-file-upload').click();
-    };
-    var updateFieldMapping = function updateFieldMapping(field, value) {
-      var newMappings = _objectSpread(_objectSpread({}, fieldMappings), {}, _defineProperty({}, field, value));
-      setAttributes({
-        fieldMappings: newMappings
-      });
-    };
-    var updateWebhookHeaders = function updateWebhookHeaders(value) {
-      try {
-        JSON.parse(value); // Validate JSON
-        setAttributes({
-          webhookHeaders: value
-        });
-      } catch (e) {
-        // Keep old value if invalid JSON
-        console.error('Invalid JSON for headers');
-      }
     };
     return /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Settings', 'suitepress'),
@@ -557,128 +481,27 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
         return setAttributes({
           downloadType: value
         });
-      }
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Lead Capture', 'suitepress'),
-      checked: enableLeadCapture,
-      onChange: function onChange(value) {
-        return setAttributes({
-          enableLeadCapture: value
-        });
       },
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Show form to collect user information before download', 'suitepress')
-    }), enableLeadCapture && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Require Lead Capture', 'suitepress'),
-      checked: requireLeadCapture,
-      onChange: function onChange(value) {
-        return setAttributes({
-          requireLeadCapture: value
-        });
-      },
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Users must fill the form to download', 'suitepress')
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Require Privacy Agreement', 'suitepress'),
-      checked: requirePrivacy,
-      onChange: function onChange(value) {
-        return setAttributes({
-          requirePrivacy: value
-        });
-      }
-    })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Webhook Settings', 'suitepress'),
-      initialOpen: false
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Webhook URL', 'suitepress'),
-      value: webhookUrl,
-      onChange: function onChange(value) {
-        return setAttributes({
-          webhookUrl: value
-        });
-      },
-      placeholder: "https://api.example.com/leads",
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('URL to send lead data when users fill the form', 'suitepress')
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Webhook Method', 'suitepress'),
-      value: webhookMethod,
-      options: [{
-        label: 'POST',
-        value: 'POST'
-      }, {
-        label: 'PUT',
-        value: 'PUT'
-      }, {
-        label: 'PATCH',
-        value: 'PATCH'
-      }],
-      onChange: function onChange(value) {
-        return setAttributes({
-          webhookMethod: value
-        });
-      }
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Webhook Headers (JSON)', 'suitepress'),
-      value: webhookHeaders,
-      onChange: updateWebhookHeaders,
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Custom headers for webhook request', 'suitepress'),
-      placeholder: "{\"Content-Type\": \"application/json\", \"Authorization\": \"Bearer token\"}"
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.BaseControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Field Mappings', 'suitepress'),
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Map form fields to your webhook endpoint field names')
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "field-mappings"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Name Field', 'suitepress'),
-      value: fieldMappings.name,
-      onChange: function onChange(value) {
-        return updateFieldMapping('name', value);
-      },
-      placeholder: "name"
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Email Field', 'suitepress'),
-      value: fieldMappings.email,
-      onChange: function onChange(value) {
-        return updateFieldMapping('email', value);
-      },
-      placeholder: "email"
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Phone Field', 'suitepress'),
-      value: fieldMappings.phone,
-      onChange: function onChange(value) {
-        return updateFieldMapping('phone', value);
-      },
-      placeholder: "phone"
-    }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Success Message', 'suitepress'),
-      value: successMessage,
-      onChange: function onChange(value) {
-        return setAttributes({
-          successMessage: value
-        });
-      }
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Error Message', 'suitepress'),
-      value: errorMessage,
-      onChange: function onChange(value) {
-        return setAttributes({
-          errorMessage: value
-        });
-      }
+      help: files.length === 1 ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Single file will download directly', 'suitepress') : ''
     }))), /*#__PURE__*/React.createElement("div", {
       className: "download-button-header"
     }, /*#__PURE__*/React.createElement("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download Button', 'suitepress')), /*#__PURE__*/React.createElement("div", {
       className: "button-group"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-      isPrimary: true,
-      onClick: openFileManager
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Files', 'suitepress')), /*#__PURE__*/React.createElement("input", {
-      id: "suitepress-file-upload",
-      type: "file",
+    }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+      onSelect: handleFileSelect,
+      allowedTypes: [],
       multiple: true,
-      onChange: handleFileSelect,
-      style: {
-        display: 'none'
+      value: files.map(function (f) {
+        return f.id;
+      }),
+      render: function render(_ref2) {
+        var open = _ref2.open;
+        return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+          isPrimary: true,
+          onClick: open
+        }, files.length > 0 ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add/Edit Files', 'suitepress') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Files', 'suitepress'));
       }
-    }))), files.length > 0 && /*#__PURE__*/React.createElement("div", {
+    })))), files.length > 0 && /*#__PURE__*/React.createElement("div", {
       className: "files-list"
     }, /*#__PURE__*/React.createElement("h4", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Selected Files', 'suitepress')), /*#__PURE__*/React.createElement("div", {
       className: "files-summary"
@@ -701,109 +524,29 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
         isDestructive: true,
         isSmall: true
       }));
-    })));
+    })), files.length === 0 && /*#__PURE__*/React.createElement("div", {
+      className: "no-files-message"
+    }, /*#__PURE__*/React.createElement("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('No files selected. Click "Add Files" to select files for download.', 'suitepress'))));
   },
-  save: function save(_ref2) {
-    var attributes = _ref2.attributes;
+  save: function save(_ref3) {
+    var attributes = _ref3.attributes;
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
       className: 'suitepress-download-button',
-      'data-enable-lead-capture': attributes.enableLeadCapture,
-      'data-require-lead-capture': attributes.requireLeadCapture,
-      'data-webhook-url': attributes.webhookUrl,
-      'data-webhook-method': attributes.webhookMethod,
-      'data-webhook-headers': attributes.webhookHeaders,
-      'data-field-mappings': JSON.stringify(attributes.fieldMappings),
-      'data-success-message': attributes.successMessage,
-      'data-error-message': attributes.errorMessage,
-      'data-require-privacy': attributes.requirePrivacy,
       'data-download-type': attributes.downloadType
     });
     var files = attributes.files,
-      buttonText = attributes.buttonText,
-      privacyText = attributes.privacyText;
-    return /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement("div", {
-      className: "download-button-container"
-    }, /*#__PURE__*/React.createElement("button", {
+      buttonText = attributes.buttonText;
+    return /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: "suitepress-download-trigger",
       "data-files": JSON.stringify(files)
-    }, buttonText), /*#__PURE__*/React.createElement("div", {
-      className: "lead-capture-form",
-      style: {
-        display: 'none'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "form-fields"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "form-group"
-    }, /*#__PURE__*/React.createElement("label", {
-      htmlFor: "download-name"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Name', 'suitepress')), /*#__PURE__*/React.createElement("input", {
-      type: "text",
-      id: "download-name",
-      className: "form-input",
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enter your name', 'suitepress'),
-      "data-field": "name"
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "form-group"
-    }, /*#__PURE__*/React.createElement("label", {
-      htmlFor: "download-email"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Email', 'suitepress')), /*#__PURE__*/React.createElement("input", {
-      type: "email",
-      id: "download-email",
-      className: "form-input",
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enter your email', 'suitepress'),
-      required: true,
-      "data-field": "email"
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "form-group"
-    }, /*#__PURE__*/React.createElement("label", {
-      htmlFor: "download-phone"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Phone', 'suitepress')), /*#__PURE__*/React.createElement("input", {
-      type: "tel",
-      id: "download-phone",
-      className: "form-input",
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enter your phone number', 'suitepress'),
-      "data-field": "phone"
-    })), attributes.requirePrivacy && /*#__PURE__*/React.createElement("div", {
-      className: "form-group privacy-agreement"
-    }, /*#__PURE__*/React.createElement("label", {
-      className: "checkbox-label"
-    }, /*#__PURE__*/React.createElement("input", {
-      type: "checkbox",
-      className: "privacy-checkbox",
-      required: attributes.requirePrivacy
-    }), /*#__PURE__*/React.createElement("span", {
-      className: "checkmark"
-    }), privacyText))), /*#__PURE__*/React.createElement("div", {
-      className: "form-actions"
-    }, /*#__PURE__*/React.createElement("button", {
-      type: "button",
-      className: "btn-cancel"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cancel', 'suitepress')), /*#__PURE__*/React.createElement("button", {
-      type: "button",
-      className: "btn-submit"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Download & Submit', 'suitepress'))), /*#__PURE__*/React.createElement("div", {
-      className: "skip-option"
-    }, /*#__PURE__*/React.createElement("button", {
-      type: "button",
-      className: "btn-skip"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Skip form and download directly', 'suitepress')))), /*#__PURE__*/React.createElement("div", {
-      className: "download-messages",
-      style: {
-        display: 'none'
-      }
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "success-message"
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "error-message"
-    }))));
+    }, buttonText));
   }
 });
 
 // Helper function
 function formatFileSize(bytes) {
-  if (bytes === 0) return '0 Bytes';
+  if (!bytes || bytes === 0) return '0 Bytes';
   var k = 1024;
   var sizes = ['Bytes', 'KB', 'MB', 'GB'];
   var i = Math.floor(Math.log(bytes) / Math.log(k));

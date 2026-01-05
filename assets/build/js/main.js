@@ -577,181 +577,247 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function() {
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, catch: function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 /**
- * Download Button Frontend Script - Updated with actual download functionality
- * File: assets/src/js/download-button-scripts.js
+ * Download Button Frontend Script - Simple click to download
+ * File: assets/src/js/gutenberg/blocks/download-button/scripts.js
  */
 
 document.addEventListener('DOMContentLoaded', function () {
   var downloadButtons = document.querySelectorAll('.suitepress-download-button');
   downloadButtons.forEach(function (container) {
     var triggerBtn = container.querySelector('.suitepress-download-trigger');
-    var leadForm = container.querySelector('.lead-capture-form');
-    var messagesContainer = container.querySelector('.download-messages');
-    var successMessage = container.querySelector('.success-message');
-    var errorMessage = container.querySelector('.error-message');
-    var enableLeadCapture = container.getAttribute('data-enable-lead-capture') === 'true';
-    var requireLeadCapture = container.getAttribute('data-require-lead-capture') === 'true';
-    var webhookUrl = container.getAttribute('data-webhook-url');
-    var webhookMethod = container.getAttribute('data-webhook-method') || 'POST';
-    var webhookHeaders = JSON.parse(container.getAttribute('data-webhook-headers') || '{}');
-    var fieldMappings = JSON.parse(container.getAttribute('data-field-mappings') || '{}');
-    var successMsg = container.getAttribute('data-success-message');
-    var errorMsg = container.getAttribute('data-error-message');
-    var requirePrivacy = container.getAttribute('data-require-privacy') === 'true';
+    if (!triggerBtn) {
+      console.error('Download trigger button not found');
+      return;
+    }
     var downloadType = container.getAttribute('data-download-type') || 'zip';
 
-    // File data from the block
-    var files = JSON.parse(triggerBtn.getAttribute('data-files') || '[]');
+    // Helper function to ensure HTTPS URLs (fix mixed content issues)
+    function ensureHttpsUrl(url) {
+      if (!url) return url;
 
-    // Show message function
-    function showMessage(type, message) {
-      messagesContainer.style.display = 'block';
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      if (type === 'success') {
-        successMessage.textContent = message;
-        successMessage.style.display = 'block';
-      } else {
-        errorMessage.textContent = message;
-        errorMessage.style.display = 'block';
+      // If page is HTTPS, convert HTTP URLs to HTTPS
+      if (window.location.protocol === 'https:' && url.startsWith('http://')) {
+        return url.replace('http://', 'https://');
       }
-      setTimeout(function () {
-        messagesContainer.style.display = 'none';
-      }, 5000);
+
+      // If URL is protocol-relative (starts with //), use current protocol
+      if (url.startsWith('//')) {
+        return window.location.protocol + url;
+      }
+      return url;
     }
 
-    // Actual download functionality
-    function downloadFiles() {
-      return _downloadFiles.apply(this, arguments);
+    // Parse file data from the block
+    var files = [];
+    try {
+      var filesData = triggerBtn.getAttribute('data-files') || '[]';
+      files = JSON.parse(filesData);
+
+      // Validate files array
+      if (!Array.isArray(files)) {
+        console.error('Files data is not an array:', files);
+        files = [];
+      }
+
+      // Filter out files without URLs and normalize URLs to HTTPS
+      files = files.map(function (file) {
+        if (file && file.url) {
+          return _objectSpread(_objectSpread({}, file), {}, {
+            url: ensureHttpsUrl(file.url)
+          });
+        }
+        return file;
+      }).filter(function (file) {
+        return file && file.url;
+      });
+      if (files.length === 0) {
+        console.warn('No valid files found in block data');
+        triggerBtn.disabled = true;
+        triggerBtn.textContent = 'No files available';
+        return;
+      }
+    } catch (error) {
+      console.error('Error parsing files data:', error);
+      files = [];
+      triggerBtn.disabled = true;
+      return;
+    }
+
+    // Download single file directly
+    function downloadSingleFile(_x) {
+      return _downloadSingleFile.apply(this, arguments);
     } // Download as ZIP
-    function _downloadFiles() {
-      _downloadFiles = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-          while (1) switch (_context2.prev = _context2.next) {
+    function _downloadSingleFile() {
+      _downloadSingleFile = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(file) {
+        var fileUrl, fileName, response, blob, blobUrl, link, _link;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
             case 0:
-              if (!(files.length === 0)) {
-                _context2.next = 3;
+              if (file.url) {
+                _context.next = 2;
                 break;
               }
-              showMessage('error', 'No files available for download.');
-              return _context2.abrupt("return");
-            case 3:
-              _context2.prev = 3;
-              triggerBtn.classList.add('loading');
-              triggerBtn.disabled = true;
-              if (!(downloadType === 'zip' && files.length > 1)) {
-                _context2.next = 11;
+              throw new Error('File URL is missing');
+            case 2:
+              // Ensure HTTPS URL
+              fileUrl = ensureHttpsUrl(file.url);
+              fileName = file.name || fileUrl.split('/').pop().split('?')[0] || "file-".concat(file.id);
+              _context.prev = 4;
+              _context.next = 7;
+              return fetch(fileUrl, {
+                method: 'GET',
+                credentials: 'same-origin',
+                mode: 'cors'
+              });
+            case 7:
+              response = _context.sent;
+              if (response.ok) {
+                _context.next = 10;
                 break;
               }
-              _context2.next = 9;
-              return downloadAsZip();
-            case 9:
-              _context2.next = 13;
+              throw new Error("HTTP error! status: ".concat(response.status));
+            case 10:
+              _context.next = 12;
+              return response.blob();
+            case 12:
+              blob = _context.sent;
+              blobUrl = URL.createObjectURL(blob);
+              link = document.createElement('a');
+              link.href = blobUrl;
+              link.download = fileName;
+              link.style.display = 'none';
+              document.body.appendChild(link);
+
+              // Trigger download
+              link.click();
+
+              // Clean up after a short delay
+              setTimeout(function () {
+                document.body.removeChild(link);
+                URL.revokeObjectURL(blobUrl);
+              }, 100);
+              _context.next = 33;
               break;
-            case 11:
-              _context2.next = 13;
-              return downloadIndividualFiles();
-            case 13:
-              showMessage('success', successMsg || 'Download completed!');
-              _context2.next = 20;
-              break;
-            case 16:
-              _context2.prev = 16;
-              _context2.t0 = _context2["catch"](3);
-              console.error('Download error:', _context2.t0);
-              showMessage('error', errorMsg || 'Download failed. Please try again.');
-            case 20:
-              _context2.prev = 20;
-              triggerBtn.classList.remove('loading');
-              triggerBtn.disabled = false;
-              return _context2.finish(20);
-            case 24:
+            case 23:
+              _context.prev = 23;
+              _context.t0 = _context["catch"](4);
+              console.error("Failed to download ".concat(fileName, ":"), _context.t0);
+              // Fallback: try direct link download (using HTTPS URL)
+              _link = document.createElement('a');
+              _link.href = fileUrl;
+              _link.download = fileName;
+              _link.style.display = 'none';
+              document.body.appendChild(_link);
+              _link.click();
+              setTimeout(function () {
+                document.body.removeChild(_link);
+              }, 100);
+            case 33:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
-        }, _callee2, null, [[3, 16, 20, 24]]);
+        }, _callee, null, [[4, 23]]);
       }));
-      return _downloadFiles.apply(this, arguments);
+      return _downloadSingleFile.apply(this, arguments);
     }
     function downloadAsZip() {
       return _downloadAsZip.apply(this, arguments);
     } // Download individual files
     function _downloadAsZip() {
-      _downloadAsZip = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var zip, _iterator, _step, file, response, blob, zipBlob, zipUrl, link;
-        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-          while (1) switch (_context3.prev = _context3.next) {
+      _downloadAsZip = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var zip, _iterator, _step, file, fileUrl, response, blob, fileName, zipBlob, zipUrl, link;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
             case 0:
               if (!(typeof JSZip === 'undefined')) {
-                _context3.next = 3;
+                _context2.next = 3;
                 break;
               }
-              _context3.next = 3;
+              _context2.next = 3;
               return loadJSZip();
             case 3:
               zip = new JSZip(); // Add files to zip
               _iterator = _createForOfIteratorHelper(files);
-              _context3.prev = 5;
+              _context2.prev = 5;
               _iterator.s();
             case 7:
               if ((_step = _iterator.n()).done) {
-                _context3.next = 25;
+                _context2.next = 29;
                 break;
               }
               file = _step.value;
               if (!file.url) {
-                _context3.next = 23;
+                _context2.next = 27;
                 break;
               }
-              _context3.prev = 10;
-              _context3.next = 13;
-              return fetch(file.url);
-            case 13:
-              response = _context3.sent;
-              _context3.next = 16;
+              _context2.prev = 10;
+              // Ensure HTTPS URL
+              fileUrl = ensureHttpsUrl(file.url);
+              _context2.next = 14;
+              return fetch(fileUrl, {
+                method: 'GET',
+                credentials: 'same-origin',
+                mode: 'cors'
+              });
+            case 14:
+              response = _context2.sent;
+              if (response.ok) {
+                _context2.next = 17;
+                break;
+              }
+              throw new Error("HTTP error! status: ".concat(response.status));
+            case 17:
+              _context2.next = 19;
               return response.blob();
-            case 16:
-              blob = _context3.sent;
-              zip.file(file.name, blob);
-              _context3.next = 23;
+            case 19:
+              blob = _context2.sent;
+              fileName = file.name || fileUrl.split('/').pop().split('?')[0] || "file-".concat(file.id);
+              zip.file(fileName, blob);
+              _context2.next = 27;
               break;
-            case 20:
-              _context3.prev = 20;
-              _context3.t0 = _context3["catch"](10);
-              console.error("Failed to fetch file ".concat(file.name, ":"), _context3.t0);
-            case 23:
-              _context3.next = 7;
-              break;
-            case 25:
-              _context3.next = 30;
-              break;
+            case 24:
+              _context2.prev = 24;
+              _context2.t0 = _context2["catch"](10);
+              console.error("Failed to fetch file ".concat(file.name || file.url, ":"), _context2.t0);
             case 27:
-              _context3.prev = 27;
-              _context3.t1 = _context3["catch"](5);
-              _iterator.e(_context3.t1);
-            case 30:
-              _context3.prev = 30;
+              _context2.next = 7;
+              break;
+            case 29:
+              _context2.next = 34;
+              break;
+            case 31:
+              _context2.prev = 31;
+              _context2.t1 = _context2["catch"](5);
+              _iterator.e(_context2.t1);
+            case 34:
+              _context2.prev = 34;
               _iterator.f();
-              return _context3.finish(30);
-            case 33:
-              _context3.next = 35;
+              return _context2.finish(34);
+            case 37:
+              if (!(Object.keys(zip.files).length === 0)) {
+                _context2.next = 39;
+                break;
+              }
+              throw new Error('No files could be added to the ZIP archive.');
+            case 39:
+              _context2.next = 41;
               return zip.generateAsync({
                 type: 'blob'
               });
-            case 35:
-              zipBlob = _context3.sent;
+            case 41:
+              zipBlob = _context2.sent;
               zipUrl = URL.createObjectURL(zipBlob);
               link = document.createElement('a');
               link.href = zipUrl;
@@ -762,11 +828,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
               // Clean up
               URL.revokeObjectURL(zipUrl);
-            case 44:
+            case 50:
             case "end":
-              return _context3.stop();
+              return _context2.stop();
           }
-        }, _callee3, null, [[5, 27, 30, 33], [10, 20]]);
+        }, _callee2, null, [[5, 31, 34, 37], [10, 24]]);
       }));
       return _downloadAsZip.apply(this, arguments);
     }
@@ -774,64 +840,50 @@ document.addEventListener('DOMContentLoaded', function () {
       return _downloadIndividualFiles.apply(this, arguments);
     } // Load JSZip library
     function _downloadIndividualFiles() {
-      _downloadIndividualFiles = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
-        var _iterator2, _step2, file, link;
-        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-          while (1) switch (_context4.prev = _context4.next) {
+      _downloadIndividualFiles = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+        var _iterator2, _step2, file;
+        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
             case 0:
               _iterator2 = _createForOfIteratorHelper(files);
-              _context4.prev = 1;
+              _context3.prev = 1;
               _iterator2.s();
             case 3:
               if ((_step2 = _iterator2.n()).done) {
-                _context4.next = 23;
+                _context3.next = 12;
                 break;
               }
               file = _step2.value;
               if (!file.url) {
-                _context4.next = 21;
+                _context3.next = 10;
                 break;
               }
-              _context4.prev = 6;
-              link = document.createElement('a');
-              link.href = file.url;
-              link.download = file.name;
-              link.style.display = 'none';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-
-              // Small delay between downloads
-              _context4.next = 16;
+              _context3.next = 8;
+              return downloadSingleFile(file);
+            case 8:
+              _context3.next = 10;
               return new Promise(function (resolve) {
-                return setTimeout(resolve, 100);
+                return setTimeout(resolve, 300);
               });
-            case 16:
-              _context4.next = 21;
+            case 10:
+              _context3.next = 3;
               break;
-            case 18:
-              _context4.prev = 18;
-              _context4.t0 = _context4["catch"](6);
-              console.error("Failed to download ".concat(file.name, ":"), _context4.t0);
-            case 21:
-              _context4.next = 3;
+            case 12:
+              _context3.next = 17;
               break;
-            case 23:
-              _context4.next = 28;
-              break;
-            case 25:
-              _context4.prev = 25;
-              _context4.t1 = _context4["catch"](1);
-              _iterator2.e(_context4.t1);
-            case 28:
-              _context4.prev = 28;
+            case 14:
+              _context3.prev = 14;
+              _context3.t0 = _context3["catch"](1);
+              _iterator2.e(_context3.t0);
+            case 17:
+              _context3.prev = 17;
               _iterator2.f();
-              return _context4.finish(28);
-            case 31:
+              return _context3.finish(17);
+            case 20:
             case "end":
-              return _context4.stop();
+              return _context3.stop();
           }
-        }, _callee4, null, [[1, 25, 28, 31], [6, 18]]);
+        }, _callee3, null, [[1, 14, 17, 20]]);
       }));
       return _downloadIndividualFiles.apply(this, arguments);
     }
@@ -844,182 +896,80 @@ document.addEventListener('DOMContentLoaded', function () {
         var script = document.createElement('script');
         script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
         script.onload = resolve;
-        script.onerror = reject;
+        script.onerror = function () {
+          return reject(new Error('Failed to load JSZip library'));
+        };
         document.head.appendChild(script);
       });
     }
 
-    // Send webhook data with field mapping
-    function sendWebhookData(_x) {
-      return _sendWebhookData.apply(this, arguments);
-    } // Validate form
-    function _sendWebhookData() {
-      _sendWebhookData = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(formData) {
-        var mappedData, payload, response;
-        return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-          while (1) switch (_context5.prev = _context5.next) {
+    // Main download function
+    function downloadFiles() {
+      return _downloadFiles.apply(this, arguments);
+    } // Simple click handler - just download
+    function _downloadFiles() {
+      _downloadFiles = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+          while (1) switch (_context4.prev = _context4.next) {
             case 0:
-              if (webhookUrl) {
-                _context5.next = 2;
+              if (!(files.length === 0)) {
+                _context4.next = 3;
                 break;
               }
-              return _context5.abrupt("return", true);
-            case 2:
-              _context5.prev = 2;
-              // Map form data using field mappings
-              mappedData = {};
-              Object.keys(fieldMappings).forEach(function (formField) {
-                var endpointField = fieldMappings[formField];
-                if (formData[formField]) {
-                  mappedData[endpointField] = formData[formField];
-                }
-              });
-              payload = {
-                timestamp: new Date().toISOString(),
-                source: 'suitepress_download_button',
-                lead: mappedData,
-                files: files.map(function (f) {
-                  return f.name;
-                }),
-                download_type: downloadType
-              };
-              _context5.next = 8;
-              return fetch(webhookUrl, {
-                method: webhookMethod,
-                headers: _objectSpread({
-                  'Content-Type': 'application/json'
-                }, webhookHeaders),
-                body: JSON.stringify(payload)
-              });
-            case 8:
-              response = _context5.sent;
-              if (response.ok) {
-                _context5.next = 11;
+              console.error('No files available for download');
+              return _context4.abrupt("return");
+            case 3:
+              _context4.prev = 3;
+              triggerBtn.classList.add('loading');
+              triggerBtn.disabled = true;
+
+              // If single file, download directly
+              if (!(files.length === 1)) {
+                _context4.next = 11;
                 break;
               }
-              throw new Error("HTTP error! status: ".concat(response.status));
-            case 11:
-              return _context5.abrupt("return", true);
-            case 14:
-              _context5.prev = 14;
-              _context5.t0 = _context5["catch"](2);
-              console.error('Webhook error:', _context5.t0);
-              return _context5.abrupt("return", false);
-            case 18:
-            case "end":
-              return _context5.stop();
-          }
-        }, _callee5, null, [[2, 14]]);
-      }));
-      return _sendWebhookData.apply(this, arguments);
-    }
-    function validateForm(form) {
-      var email = form.querySelector('#download-email').value;
-      var privacyCheckbox = form.querySelector('.privacy-checkbox');
-      if (!email || !isValidEmail(email)) {
-        showMessage('error', 'Please enter a valid email address.');
-        return false;
-      }
-      if (requirePrivacy && (!privacyCheckbox || !privacyCheckbox.checked)) {
-        showMessage('error', 'Please agree to the privacy policy.');
-        return false;
-      }
-      return true;
-    }
-
-    // Email validation
-    function isValidEmail(email) {
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
-    }
-
-    // Get form data
-    function getFormData() {
-      return {
-        name: container.querySelector('#download-name').value,
-        email: container.querySelector('#download-email').value,
-        phone: container.querySelector('#download-phone').value
-      };
-    }
-
-    // Show/hide form functions (same as before)
-    function showLeadCaptureForm() {
-      leadForm.style.display = 'block';
-      triggerBtn.style.display = 'none';
-    }
-    function hideLeadCaptureForm() {
-      leadForm.style.display = 'none';
-      triggerBtn.style.display = 'block';
-      leadForm.reset();
-    }
-
-    // Event listeners (same as before)
-    triggerBtn.addEventListener('click', function () {
-      if (enableLeadCapture && (requireLeadCapture || confirm('Would you like to share your contact information before downloading?'))) {
-        showLeadCaptureForm();
-      } else {
-        downloadFiles();
-      }
-    });
-    var submitBtn = container.querySelector('.btn-submit');
-    if (submitBtn) {
-      submitBtn.addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var formData, webhookSuccess;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              if (validateForm(leadForm)) {
-                _context.next = 2;
-                break;
-              }
-              return _context.abrupt("return");
-            case 2:
-              formData = getFormData();
-              _context.next = 5;
-              return sendWebhookData(formData);
-            case 5:
-              webhookSuccess = _context.sent;
-              if (!webhookSuccess) {
-                _context.next = 12;
-                break;
-              }
-              showMessage('success', successMsg || 'Thank you! Your download will begin shortly.');
-              _context.next = 10;
-              return downloadFiles();
-            case 10:
-              _context.next = 13;
+              _context4.next = 9;
+              return downloadSingleFile(files[0]);
+            case 9:
+              _context4.next = 18;
               break;
-            case 12:
-              showMessage('error', errorMsg || 'Failed to submit information. Please try again.');
-            case 13:
-              hideLeadCaptureForm();
+            case 11:
+              if (!(downloadType === 'zip')) {
+                _context4.next = 16;
+                break;
+              }
+              _context4.next = 14;
+              return downloadAsZip();
             case 14:
+              _context4.next = 18;
+              break;
+            case 16:
+              _context4.next = 18;
+              return downloadIndividualFiles();
+            case 18:
+              _context4.next = 24;
+              break;
+            case 20:
+              _context4.prev = 20;
+              _context4.t0 = _context4["catch"](3);
+              console.error('Download error:', _context4.t0);
+              alert('Download failed. Please try again.');
+            case 24:
+              _context4.prev = 24;
+              triggerBtn.classList.remove('loading');
+              triggerBtn.disabled = false;
+              return _context4.finish(24);
+            case 28:
             case "end":
-              return _context.stop();
+              return _context4.stop();
           }
-        }, _callee);
-      })));
+        }, _callee4, null, [[3, 20, 24, 28]]);
+      }));
+      return _downloadFiles.apply(this, arguments);
     }
-    var cancelBtn = container.querySelector('.btn-cancel');
-    if (cancelBtn) {
-      cancelBtn.addEventListener('click', hideLeadCaptureForm);
-    }
-    var skipBtn = container.querySelector('.btn-skip');
-    if (skipBtn) {
-      skipBtn.addEventListener('click', function () {
-        downloadFiles();
-        hideLeadCaptureForm();
-      });
-    }
-
-    // Enter key support
-    var formInputs = container.querySelectorAll('.form-input');
-    formInputs.forEach(function (input) {
-      input.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-          submitBtn.click();
-        }
-      });
+    triggerBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      downloadFiles();
     });
   });
 });
@@ -1185,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function() {
 
 document.addEventListener('DOMContentLoaded', function () {
-  var words = ['Expert WordPress Solutions', 'Premium Plugins & Themes', 'Custom Development', 'Technical Excellence', 'Professional Support', 'Innovative Features', 'Reliable Performance'];
+  var words = ['Technical Blogs', 'Tech Tutorials', 'Free plugins', 'Free Addons', 'Free WP Support', 'WP Tips'];
   var typingElement = document.getElementById('typing-text');
   var wordIndex = 0;
   var charIndex = 0;
@@ -1222,57 +1172,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Start the typing effect
   typeWriter();
-});
-
-//Header
-document.addEventListener('DOMContentLoaded', function () {
-  var banner = document.querySelector('.sp-top-banner');
-  var closeBtn = document.querySelector('.sp-banner-close');
-
-  // Check if user has dismissed the banner
-  var bannerDismissed = localStorage.getItem('spBannerDismissed');
-  if (bannerDismissed === 'true') {
-    banner.remove();
-    return;
-  }
-
-  // Close banner functionality
-  closeBtn.addEventListener('click', function () {
-    // Add hide animation
-    banner.classList.add('sp-banner-hidden');
-
-    // Remove from DOM after animation
-    setTimeout(function () {
-      banner.remove();
-    }, 500);
-
-    // Remember user's choice
-    localStorage.setItem('spBannerDismissed', 'true');
-  });
-
-  // Add intersection observer for performance
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('sp-banner-visible');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-  observer.observe(banner);
-
-  // Add feature tooltips for mobile
-  if (window.innerWidth <= 640) {
-    var featureItems = document.querySelectorAll('.sp-feature-item');
-    featureItems.forEach(function (item) {
-      item.addEventListener('click', function (e) {
-        e.preventDefault();
-        var tooltip = this.querySelector('.sp-feature-text');
-        alert(tooltip.getAttribute('data-tooltip') || tooltip.textContent + ' - ' + this.getAttribute('title'));
-      });
-    });
-  }
 });
 
 /***/ }),

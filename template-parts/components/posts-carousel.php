@@ -5,7 +5,7 @@
  * @package SuitePress
  */
 $args = [
-    'posts_per_page'         => 8,
+    'posts_per_page'         => 12,
     'post_type'              => 'post',
     'update_post_meta_cache' => false,
     'update_post_term_cache' => false,
@@ -19,9 +19,6 @@ $post_query = new \WP_Query( $args );
 
             <!-- Section Header -->
             <div class="section-header">
-                <div class="section-badge">
-                    <span>Latest Insights</span>
-                </div>
                 <h2 class="section-title">
                     Explore <span class="text-accent">Featured Articles</span>
                 </h2>
@@ -91,14 +88,10 @@ $post_query = new \WP_Query( $args );
                                     </a>
                                 </h3>
 
-                                <div class="post-excerpt">
-                                    <?php suitepress_the_excerpt(80); ?>
-                                </div>
-
                                 <!-- Card Footer -->
                                 <div class="post-card-footer">
                                     <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more-btn">
-                                        <span>Read Article</span>
+                                        <span>Read More</span>
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
                                     <div class="post-stats">

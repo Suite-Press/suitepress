@@ -5,7 +5,7 @@
  * @package SuitePress
  */
 $args = [
-    'posts_per_page'         => 4,
+    'posts_per_page'         => 5,
     'post_type'              => 'post',
     'update_post_meta_cache' => false,
     'update_post_term_cache' => false,
@@ -25,9 +25,6 @@ $post_query = new \WP_Query( $args );
                 <h2 class="section-title">
                     Explore <span class="text-accent">Featured</span> Blogs
                 </h2>
-                <p class="section-description">
-                    Stay updated with cutting-edge solutions.
-                </p>
             </div>
 
             <!-- Blog Grid -->
@@ -81,28 +78,29 @@ $post_query = new \WP_Query( $args );
                                 </h3>
 
                                 <div class="blog-excerpt">
-                                    <?php suitepress_the_excerpt(80); ?>
+                                    <?php suitepress_the_excerpt(100); ?>
                                 </div>
 
                                 <!-- Post Meta -->
                                 <div class="blog-meta">
-                                    <div class="author-avatar">
-                                        <?php echo get_avatar( get_the_author_meta('ID'), 32 ); ?>
+                                    <div class="author-blog-meta">
+                                        <div class="author-avatar">
+                                            <?php echo get_avatar( get_the_author_meta('ID'), 32 ); ?>
+                                        </div>
+                                        <div class="meta-info">
+                                            <span class="author-name"><?php the_author(); ?></span>
+                                            <span class="post-date"><?php echo get_the_date('M j, Y'); ?></span>
+                                        </div>
                                     </div>
-                                    <div class="meta-info">
-                                        <span class="author-name"><?php the_author(); ?></span>
-                                        <span class="post-date"><?php echo get_the_date('M j, Y'); ?></span>
-                                    </div>
-                                </div>
 
-                                <!-- Read More Button -->
-                                <div class="blog-card-actions">
-                                    <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more-btn">
-                                        <span>Read Article</span>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                                        </svg>
-                                    </a>
+                                    <div class="blog-card-actions">
+                                        <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more-btn">
+                                            <span>Read More</span>
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </article>
