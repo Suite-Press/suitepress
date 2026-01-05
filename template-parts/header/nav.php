@@ -14,11 +14,6 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
         <div class="sp-banner-content">
             <!-- Left Side - Main Message -->
             <div class="sp-banner-main">
-                <div class="sp-banner-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.24 10.28 4 13l8 8 8-8c2.76-2.72 2.54-6.3.42-8.42z"></path>
-                    </svg>
-                </div>
                 <div class="sp-banner-text">
                     Empowering Tech Journey
                 </div>
@@ -27,57 +22,21 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
             <!-- Center - Feature Highlights -->
             <div class="sp-banner-features">
                 <div class="sp-feature-item">
-                    <span class="sp-feature-icon">🎁</span>
-                    <span class="sp-feature-text">Free Plugins</span>
+                    <span class="sp-feature-text">WP Plugins & Addons</span>
                 </div>
                 <div class="sp-feature-item">
-                    <span class="sp-feature-icon">📚</span>
-                    <span class="sp-feature-text">Expert Blogs</span>
+                    <span class="sp-feature-text">Informative Blogs</span>
                 </div>
                 <div class="sp-feature-item">
-                    <span class="sp-feature-icon">🎓</span>
-                    <span class="sp-feature-text">Tutorials</span>
+                    <span class="sp-feature-text">Tech Tutorials</span>
                 </div>
             </div>
 
             <!-- Right Side - CTA -->
             <div class="sp-banner-actions">
-                <a href="/plugins" class="sp-banner-btn sp-banner-btn-primary">
+                <a href="/free-plugins" class="sp-banner-btn sp-banner-btn-primary">
                     Explore Free Plugins
                 </a>
-                <button class="sp-banner-close" aria-label="Close banner" title="Close banner">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Expanded Details (Hidden by default, shows on hover) -->
-        <div class="sp-banner-details">
-            <div class="sp-details-grid">
-                <div class="sp-detail-item">
-                    <div class="sp-detail-icon">🆓</div>
-                    <div class="sp-detail-content">
-                        <h4>Free Plugins</h4>
-                        <p>Most of our plugins are completely free with premium features</p>
-                    </div>
-                </div>
-                <div class="sp-detail-item">
-                    <div class="sp-detail-icon">📖</div>
-                    <div class="sp-detail-content">
-                        <h4>Technical Blogs</h4>
-                        <p>Learn from our expert articles on WordPress development</p>
-                    </div>
-                </div>
-                <div class="sp-detail-item">
-                    <div class="sp-detail-icon">💡</div>
-                    <div class="sp-detail-content">
-                        <h4>Easy Tutorials</h4>
-                        <p>Step-by-step guides for WordPress and related technologies</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -148,8 +148,6 @@ get_header();
                 </article>
 
                 <!-- FOOTER: Your Custom Design Goes Here -->
-                <!-- Donation Section -->
-                <?php get_template_part( 'template-parts/page/addon/donation' ); ?>
 
             <?php
             endwhile;

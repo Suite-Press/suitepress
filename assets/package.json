@@ -6,13 +6,15 @@
   "scripts": {
     "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
     "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-    "clean": "rm -rf build/*",
     "svg": "svgr -d src/js/icons src/icons",
     "lint": "eslint src/js/*",
     "lint:fix": "eslint --fix src/js/*",
     "lint-css": "stylelint 'src/sass/**/*.scss'",
     "lint-css:fix": "npm run lint-css -- --fix",
-    "precommit": "npm run lint-css:fix && npm run lint:fix && npm run prod"
+    "precommit": "npm run lint-css:fix && npm run lint:fix && npm run prod",
+    "build:theme": "npm run prod && node assets/build-theme.js",
+    "zip:theme": "npm run build:theme",
+    "clean": "rm -rf build/* theme-dist/*"
   },
   "keywords": [
     "wordpress",
@@ -54,6 +56,7 @@
     "eslint-plugin-jsdoc": "^50.6.1",
     "eslint-webpack-plugin": "^4.2.0",
     "file-loader": "^6.2.0",
+    "fs-extra": "^11.3.2",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.9.2",
     "optimize-css-assets-webpack-plugin": "^6.0.1",

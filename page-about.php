@@ -13,7 +13,7 @@ get_header();
         <section class="sp-about-hero">
             <div class="sp-container">
                 <div class="sp-about-hero-content">
-                    <h1 class="sp-about-title">SuitePress - Makes WordPress Easy</h1>
+                    <h1 class="sp-about-title"> SuitePress - Introduce WordPress to All </h1>
 <!--                    <div class="sp-hero-stats">-->
 <!--                        <div class="sp-hero-stat">-->
 <!--                            <div class="sp-stat-number" data-count="150">0</div>-->
@@ -48,7 +48,7 @@ get_header();
                             </svg>
                         </div>
                         <h3>Mission</h3>
-                        <p>To deliver exceptional digital solutions</p>
+                        <p>To deliver exceptional solutions</p>
                     </div>
                     <div class="sp-mission-card">
                         <div class="sp-card-icon">
@@ -80,14 +80,13 @@ get_header();
                             </svg>
                         </div>
                         <h4>Web Development</h4>
-                        coming soon...
-<!--                        <p>Custom web applications, e-commerce solutions, and responsive websites built with modern technologies.</p>-->
-<!--                        <ul class="sp-expertise-list">-->
-<!--                            <li>React & Vue.js</li>-->
-<!--                            <li>WordPress Development</li>-->
-<!--                            <li>PHP & Laravel</li>-->
-<!--                            <li>Node.js</li>-->
-<!--                        </ul>-->
+                        <p>Custom web applications, e-commerce solutions, and responsive websites built with modern technologies.</p>
+                        <ul class="sp-expertise-list">
+                            <li>React & Vue.js</li>
+                            <li>WordPress Development</li>
+                            <li>PHP & Laravel</li>
+                            <li>Node.js</li>
+                        </ul>
                     </div>
                     <div class="sp-expertise-card">
                         <div class="sp-expertise-icon">
@@ -98,14 +97,13 @@ get_header();
                             </svg>
                         </div>
                         <h4>WP Plugins Development</h4>
-                        coming soon...
-<!--                        <p>User-centered design that combines aesthetics with functionality to create engaging digital experiences.</p>-->
-<!--                        <ul class="sp-expertise-list">-->
-<!--                            <li>User Research</li>-->
-<!--                            <li>Prototyping</li>-->
-<!--                            <li>Design Systems</li>-->
-<!--                            <li>Usability Testing</li>-->
-<!--                        </ul>-->
+                        <p>User-centered design that combines aesthetics with functionality to create engaging digital experiences.</p>
+                        <ul class="sp-expertise-list">
+                            <li>User Research</li>
+                            <li>Prototyping</li>
+                            <li>Design Systems</li>
+                            <li>Usability Testing</li>
+                        </ul>
                     </div>
                     <div class="sp-expertise-card">
                         <div class="sp-expertise-icon">
@@ -115,14 +113,13 @@ get_header();
                             </svg>
                         </div>
                         <h4>WP Theme Development</h4>
-                        coming soon...
-<!--                        <p>Data-driven strategies that align technology with business objectives for maximum impact.</p>-->
-<!--                        <ul class="sp-expertise-list">-->
-<!--                            <li>Technical Consulting</li>-->
-<!--                            <li>Digital Transformation</li>-->
-<!--                            <li>Performance Optimization</li>-->
-<!--                            <li>Growth Strategy</li>-->
-<!--                        </ul>-->
+                        <p>Data-driven strategies that align technology with business objectives for maximum impact.</p>
+                        <ul class="sp-expertise-list">
+                            <li>Technical Consulting</li>
+                            <li>Digital Transformation</li>
+                            <li>Performance Optimization</li>
+                            <li>Growth Strategy</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -139,40 +136,26 @@ get_header();
                     <div class="sp-process-step">
                         <div class="sp-step-number">01</div>
                         <h4>Discovery & Planning</h4>
-<!--                        <p>We begin by understanding your business goals, target audience, and technical requirements to create a comprehensive project roadmap.</p>-->
+                        <p>Need to begin by understanding the business goals, target audience, and technical requirements.</p>
                     </div>
                     <div class="sp-process-step">
                         <div class="sp-step-number">02</div>
                         <h4>Design & Prototyping</h4>
-<!--                        <p>Our design team creates wireframes and prototypes, ensuring the user experience aligns with your brand and business objectives.</p>-->
+                        <p>And then need to create wireframes and prototypes, ensuring the user experience aligns.</p>
                     </div>
                     <div class="sp-process-step">
                         <div class="sp-step-number">03</div>
                         <h4>Development</h4>
-<!--                        <p>Using agile methodologies, we build robust, scalable solutions with clean code and modern development practices.</p>-->
+                        <p>Using agile methodologies, to build robust, scalable solutions with clean code.</p>
                     </div>
                     <div class="sp-process-step">
                         <div class="sp-step-number">04</div>
                         <h4>Testing & Launch</h4>
-<!--                        <p>Rigorous testing and quality assurance ensure your solution performs flawlessly before deployment.</p>-->
+                        <p>Rigorous testing and quality assurance.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- CTA Section -->
-<!--        <section class="sp-about-cta">-->
-<!--            <div class="sp-container">-->
-<!--                <div class="sp-cta-content">-->
-<!--                    <h2>Ready to Start Your Project?</h2>-->
-<!--                    <p>Let's discuss how we can help transform your digital presence and achieve your business goals.</p>-->
-<!--                    <div class="sp-cta-buttons">-->
-<!--                        <a href="/contact" class="sp-btn sp-btn-primary">Get in Touch</a>-->
-<!--                        <a href="/portfolio" class="sp-btn sp-btn-secondary">View Our Work</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
     </main>
 
 <?php

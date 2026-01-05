@@ -70,13 +70,14 @@ $hero-text: #4a5568;
 
     .badge-text {
       display: inline-block;
-      background: rgba($hero-primary, 0.1);
-      color: $hero-primary;
+      position: relative;
+      box-shadow: #dc354512 3px 3px 6px 0px inset, #ffffff -3px -3px 6px 1px inset;
       padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: 1px solid rgba($hero-primary, 0.2);
+      border-radius: 5px;
+      span{
+        font-size: 20px;
+        -webkit-text-fill-color: #008080;
+      }
     }
   }
 
@@ -109,10 +110,9 @@ $hero-text: #4a5568;
   }
 
   .hero-description {
-    font-size: 1.25rem;
+    font-size: 18px;
     line-height: 1.6;
     color: $hero-text;
-    margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -129,8 +129,6 @@ $hero-text: #4a5568;
 
     .search-form-suitepress {
       input[type="search"] {
-        flex: 1;
-        border: none;
         background: transparent;
         padding: 15px 25px;
         font-size: 1rem;
@@ -171,13 +169,14 @@ $hero-text: #4a5568;
     }
 
     a {
-      color: $hero-primary;
+      color: #00000085;
       text-decoration: none;
       font-size: 0.9rem;
       padding: 4px 12px;
-      background: rgba($hero-primary, 0.1);
+      background: #ecf3f8;
       border-radius: 15px;
-      transition: all 0.3s ease;
+      transition: all 0.3s
+      ease;
 
       &:hover {
         background: $hero-primary;
@@ -195,9 +194,9 @@ $hero-text: #4a5568;
   margin-bottom: 3rem;
 
   .service-card {
-    background: white;
+    background: #ebf2f208;
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.1rem;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -218,32 +217,26 @@ $hero-text: #4a5568;
     }
 
     .card-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, rgba($hero-primary, 0.1) 0%, rgba($hero-secondary, 0.1) 100%);
-      border-radius: 15px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-
+      justify-content: end;
       img {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
         object-fit: contain;
       }
     }
 
     .card-content {
       h3 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: $hero-dark;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #438c8d;
         margin-bottom: 0.5rem;
       }
 
       p {
-        color: $hero-text;
+        color: #00000085;
         line-height: 1.5;
         margin-bottom: 1rem;
       }

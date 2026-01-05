@@ -12,35 +12,18 @@
     <section class="footer-subscription-card">
         <div class="container">
             <div class="subscription-card">
-                <div class="card-close">
-                    <button class="close-btn" aria-label="Close subscription card">
-                        <i class="fa-solid fa-times"></i>
-                    </button>
-                </div>
+
                 <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fa-regular fa-envelope-open"></i>
-                    </div>
-                    <div class="card-text">
-                        <h3>Stay Ahead with SuitePress Insights</h3>
-                        <p>Get exclusive WordPress tips, industry updates, and expert tutorials delivered directly to your inbox. Join our community of 10,000+ developers.</p>
+                    <div class="contents-subform">
+                        <div class="card-icon">
+                            <i class="fa-regular fa-envelope-open"></i>
+                        </div>
+                        <div class="card-text">
+                            <h4>Subscribed to get insights</h4>
+                        </div>
                     </div>
                     <div class="subscription-form">
                         <?php echo do_shortcode('[fluentform id="6"]'); ?>
-                    </div>
-                    <div class="subscription-benefits">
-                        <div class="benefit-item">
-                            <i class="fa-solid fa-check"></i>
-                            <span>Weekly WordPress Tips</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fa-solid fa-check"></i>
-                            <span>Exclusive Tutorials</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fa-solid fa-check"></i>
-                            <span>No Spam, Unsubscribe Anytime</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -53,33 +36,16 @@
             <div class="footer-content-wrapper">
                 <!-- Brand & Description -->
                 <div class="footer-brand-column">
-                    <div class="footer-logo">
-                        <?php
-                        if ( function_exists( 'the_custom_logo' ) ) {
-                            the_custom_logo();
-                        } else {
-                            echo '<h3>SuitePress</h3>';
-                        }
-                        ?>
+                    <div class="footer-cta-column">
+                        <div class="cta-content">
+                            <h2 class="lets-talk-heading wave-text">
+                                <span>C</span><span>O</span><span>D</span><span>E</span> Makes Dream True..
+                            </h2>
+                        </div>
                     </div>
                     <p class="footer-description">
-                        Empowering WordPress developers with premium tutorials, plugins,
-                        and expert support since 2023. Building the future of web development, one site at a time.
+                        Let's Build Something Amazing Together
                     </p>
-                    <div class="footer-achievements">
-                        <div class="achievement">
-                            <span class="achievement-number">500+</span>
-                            <span class="achievement-label">Tutorials</span>
-                        </div>
-                        <div class="achievement">
-                            <span class="achievement-number">10K+</span>
-                            <span class="achievement-label">Developers</span>
-                        </div>
-                        <div class="achievement">
-                            <span class="achievement-number">24/7</span>
-                            <span class="achievement-label">Support</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Widget Columns -->
@@ -123,17 +89,8 @@
                     <!-- Let's Talk Column -->
                     <div class="footer-cta-column">
                         <div class="cta-content">
-                            <h2 class="lets-talk-heading">Let's Build Something Amazing Together</h2>
-                            <div class="cta-actions">
-                                <a href="/contact" class="btn-primary">
-                                    <i class="fa-regular fa-comment-dots"></i>
-                                    Start a Conversation
-                                </a>
-                                <a href="mailto:hello@suitepress.org" class="btn-secondary">
-                                    <i class="fa-regular fa-envelope"></i>
-                                    contact_support @suitepress.org
-                                </a>
-                            </div>
+                            <h2 class="lets-talk-heading">Engineering Meets Creativity..</h2>
+                            <p>WordPress Innovation Meets Scalable Solutions. </p>
                         </div>
                     </div>
                 </div>
